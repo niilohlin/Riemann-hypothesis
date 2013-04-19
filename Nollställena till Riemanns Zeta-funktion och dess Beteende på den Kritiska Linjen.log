@@ -1,15 +1,27 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.2.25)  8 APR 2013 13:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/TeX Live for SUSE Linux) (format=pdflatex 2013.4.1)  19 APR 2013 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**appendix.tex
-(./appendix.tex
+**"Nollställena till Riemanns Zeta-funktion och dess Beteende på den Kritiska
+ Linjen.tex"
+
+(./Nollställena till Riemanns Zeta-funktion och dess Beteende på den Kritiska
+ Linjen.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
-aded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nyn
+orsk, polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbia
+nc, slovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorb
+ian, welsh, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+(/usr/share/texmf/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -26,11 +38,11 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 ) (./mathtools.sty
 Package: mathtools 2008/08/01 v1.06 mathematical typesetting tools (MH)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+(/usr/share/texmf/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count87
 \calc@Bcount=\count88
@@ -43,27 +55,27 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count89
 \calc@Cskip=\skip45
 )
-(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
+(/usr/share/texmf/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texmf/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count90
@@ -107,7 +119,7 @@ LaTeX Info: Redefining \] on input line 2667.
 \g_MT_multlinerow_int=\count102
 \l_MT_multwidth_dim=\dimen114
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+(/usr/share/texmf/tex/latex/amscls/amsthm.sty
 Package: amsthm 2009/07/02 v2.20.1
 \thm@style=\toks20
 \thm@bodyfont=\toks21
@@ -119,34 +131,34 @@ Package: amsthm 2009/07/02 v2.20.1
 \thm@headsep=\skip51
 \dth@everypar=\toks25
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texmf/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texmf/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texmf/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texmf/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
@@ -154,41 +166,36 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen115
 \Gin@req@width=\dimen116
 )
-(/usr/share/texlive/texmf-dist/tex/latex/esint/esint.sty
+(/usr/share/texmf/tex/latex/esint/esint.sty
 Package: esint 
 \symlargesymbolsA=\mathgroup6
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texmf/tex/generic/babel/babel.sty
 Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/swedish.ldf
+(/usr/share/texmf/tex/generic/babel/swedish.ldf
 Language: swedish 2005/03/31 v2.3d Swedish support from the babel system
 
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+(/usr/share/texmf/tex/generic/babel/babel.def
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count104
 \U@D=\dimen117
 )
-
-Package babel Warning: No hyphenation patterns were loaded for
-(babel)                the language `Swedish'
-(babel)                I will use the patterns loaded for \language=0 instead.
-
-\l@swedish = a dialect from \language0
 Package babel Info: Making " an active character on input line 90.
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+))
+(/usr/share/texmf/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks26
 \inpenc@posthook=\toks27
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+(/usr/share/texmf/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -338,7 +345,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+(/usr/share/texmf/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -369,7 +376,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+(/usr/share/texmf/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -392,23 +399,25 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./appendix.aux)
-\openout1 = `appendix.aux'.
+))
+(./Nollställena till Riemanns Zeta-funktion och dess Beteende på den Kritiska
+ Linjen.aux)
+\openout1 = `"Nollställena till Riemanns Zeta-funktion och dess Beteende på d
+en Kritiska Linjen.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+ (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count105
 \scratchdimen=\dimen118
@@ -421,15 +430,15 @@ LaTeX Font Info:    ... okay on input line 13.
 \MPnumerator=\count109
 \makeMPintoPDFobject=\count110
 \everyMPtoPDFconversion=\toks29
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+) (/usr/share/texmf/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texmf/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -438,22 +447,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texmf/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texmf/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texmf/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texmf/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texmf/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texmf/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -465,58 +474,242 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texmf/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 17.
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+esint on input line 17.
+LaTeX Font Info:    Try loading font information for U+esint on input line 20.
 
-(/usr/share/texlive/texmf-dist/tex/latex/esint/uesint.fd
+(/usr/share/texmf/tex/latex/esint/uesint.fd
 File: uesint.fd 
-)
-Overfull \hbox (14.25433pt too wide) in paragraph at lines 34--34
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+
+ []
+
+
+Overfull \hbox (150.05428pt too wide) detected at line 50
+[] [][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
+
+ []
+
+[3]
+Overfull \hbox (5.55458pt too wide) in paragraph at lines 107--112
+\OT1/cmr/m/n/10 (Division med $^^@([])$ i den sista lik-he-ten, in-neb[]ar att 
+zeta-funktionen har nollst[]allen
+ []
+
+
+Overfull \hbox (4.03232pt too wide) in paragraph at lines 107--112
+\OT1/cmr/m/n/10 var-je g^^Wang d^^Wa $^^@([])$ har en sin-gu-la-ri-tet. P^^Wa s
+^^Wa s[]att erh^^Walls de ``tri-vi-a-la nollst[]allena'') 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--112
+
+ []
+
+
+Overfull \hbox (12.43237pt too wide) in paragraph at lines 112--122
+ \OT1/cmr/bx/n/10 Sats 4:[] \OT1/cmr/m/n/10 De tri-vi-a-la nollst[]allena till 
+Ri-e-manns zeta-funktion []ar de en-da nollst[]allena
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--122
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--154
+
+ []
+
+
+Overfull \hbox (43.39629pt too wide) detected at line 157
+\OML/cmm/m/it/10 ln [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ln [] \OT1/cmr/m/n/10
+ = [] \OML/cmm/m/it/10 ln [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@ [] \OML/cmm
+/m/it/10 ln [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 Re\OT1/cm
+r/m/n/10 ([] \OML/cmm/m/it/10 ln\OT1/cmr/m/n/10 (1 \OMS/cmsy/m/n/10 ^^@ \OML/cm
+m/m/it/10 p[]\OT1/cmr/m/n/10 ))
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--192
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 193--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--203
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
+
+ []
+
+[7]
+Overfull \hbox (1.63808pt too wide) detected at line 275
+\OML/cmm/m/it/10 Q\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OMS/c
+msy/m/n/10 ^^@[] ^^A [][] \OML/cmm/m/it/10 ^^P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ s\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 ^^@\OML/cmm/m/it/10 ^^
+Y[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 e[] ds \OT1/cmr/m/n/10 + [] \OMS/cmsy
+/m/n/10 ^^A \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ^^Yi \OMS/cmsy/m/n/10 ^^A []\OT1/
+cmr/m/n/10 (\OML/cmm/m/it/10 ^^P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s\OT1/cmr/m/n
+/10 ) \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 ^^@([]) \OMS/cmsy/m/n/10 ^^A \OML/cm
+m/m/it/10 ^^Y[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 e[]; \OT1/cmr/m/n/10 1)
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 344--349
+
+ []
+
+[9] [10] [11]
+Overfull \hbox (14.25433pt too wide) in paragraph at lines 437--437
 [] 
  []
 
 
-Overfull \hbox (11.46288pt too wide) in paragraph at lines 40--40
+Overfull \hbox (11.46288pt too wide) in paragraph at lines 443--443
 [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--50
-
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
+Underfull \hbox (badness 10000) in paragraph at lines 450--453
 
  []
 
 
-Overfull \hbox (12.58067pt too wide) detected at line 89
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
+ []
+
+<linus_0001.jpg, id=57, 741.77126pt x 393.47pt>
+File: linus_0001.jpg Graphic file (type jpg)
+ <use linus_0001.jpg>
+Package pdftex.def Info: linus_0001.jpg used on input line 465.
+(pdftex.def)             Requested size: 370.88472pt x 196.73451pt.
+
+Overfull \hbox (25.88472pt too wide) in paragraph at lines 465--466
+ [] 
+ []
+
+[13] [14 <./linus_0001.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+
+Overfull \hbox (12.58067pt too wide) detected at line 499
 [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) \OM
 L/cmm/m/it/10 dz \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML
 /cmm/m/it/10 z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ))[] \OML/cmm/
@@ -529,55 +722,65 @@ y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )) + \OML/cmm/m/it/10 iv\OT
  []
 
 
-Overfull \hbox (39.5911pt too wide) detected at line 92
+Overfull \hbox (39.5911pt too wide) detected at line 502
 \OT1/cmr/m/n/10 = [][] []  \OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 + \OML/cmm/m/it/
 10 i [][] []  dt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--110
+Underfull \hbox (badness 10000) in paragraph at lines 514--521
 
  []
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 522--527
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--121
+Underfull \hbox (badness 10000) in paragraph at lines 522--527
 
  []
 
 
-Overfull \hbox (32.7488pt too wide) detected at line 125
+Underfull \hbox (badness 10000) in paragraph at lines 528--534
+
+ []
+
+
+Overfull \hbox (32.7488pt too wide) detected at line 538
 [][] [] \OML/cmm/m/it/10 dz \OT1/cmr/m/n/10 = [][] [] \OML/cmm/m/it/10 dz \OT1/
 cmr/m/n/10 = [][] [] \OML/cmm/m/it/10 dz \OT1/cmr/m/n/10 + [][] [] \OML/cmm/m/i
 t/10 dz \OT1/cmr/m/n/10 (1)
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 570--573
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--178
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--189
+Underfull \hbox (badness 10000) in paragraph at lines 596--603
 
  []
 
-[5]
-Overfull \hbox (77.55305pt too wide) detected at line 230
+[17] <aoeu.jpg, id=74, 772.8875pt x 278.03876pt>
+File: aoeu.jpg Graphic file (type jpg)
+ <use aoeu.jpg>
+Package pdftex.def Info: aoeu.jpg used on input line 604.
+(pdftex.def)             Requested size: 386.4428pt x 139.01903pt.
+
+Overfull \hbox (41.4428pt too wide) in paragraph at lines 604--605
+ [] 
+ []
+
+
+Overfull \hbox (77.55305pt too wide) detected at line 648
 \OMS/cmsy/m/n/10 ^^@[] [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  ^^P\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^A [] [] \OML/cmm/m/it/10 d^^P \OT1/cmr
 /m/n/10 = [] \OMS/cmsy/m/n/10 ^^@[] ^^A [][] [] \OML/cmm/m/it/10 d^^P \OMS/cmsy
@@ -586,143 +789,136 @@ Overfull \hbox (77.55305pt too wide) detected at line 230
 m/m/it/10 z \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 z[]\OT1/cmr/m/n/10 )[]
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--244
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 273--278
+[18 <./aoeu.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 660--664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--285
+Underfull \hbox (badness 10000) in paragraph at lines 693--700
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 704--707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--289
+Underfull \hbox (badness 10000) in paragraph at lines 708--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--289
+Underfull \hbox (badness 10000) in paragraph at lines 708--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+Underfull \hbox (badness 10000) in paragraph at lines 725--727
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+Underfull \hbox (badness 10000) in paragraph at lines 727--729
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--312
+Underfull \hbox (badness 10000) in paragraph at lines 732--735
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--317
+Underfull \hbox (badness 10000) in paragraph at lines 735--740
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--317
+Underfull \hbox (badness 10000) in paragraph at lines 735--740
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--317
+Underfull \hbox (badness 10000) in paragraph at lines 735--740
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 740--745
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--322
+Underfull \hbox (badness 10000) in paragraph at lines 740--745
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--322
+Underfull \hbox (badness 10000) in paragraph at lines 740--745
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--322
+Underfull \hbox (badness 10000) in paragraph at lines 745--748
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--325
+Underfull \hbox (badness 10000) in paragraph at lines 756--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--325
+Underfull \hbox (badness 10000) in paragraph at lines 759--762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+Underfull \hbox (badness 10000) in paragraph at lines 759--762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--338
+Underfull \hbox (badness 10000) in paragraph at lines 777--780
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--338
+Underfull \hbox (badness 10000) in paragraph at lines 780--784
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 353--356
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--359
-
- []
-
-[9] (./appendix.aux) ) 
+[21] [22]
+(./Nollställena till Riemanns Zeta-funktion och dess Beteende på den Kritiska
+ Linjen.aux) ) 
 Here is how much of TeX's memory you used:
- 3274 strings out of 495059
- 43892 string characters out of 3182030
- 109648 words of memory out of 3000000
- 6387 multiletter control sequences out of 15000+200000
- 10993 words of font info for 48 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 38i,11n,24p,261b,203s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/esint-type1/esint
-10.pfb>
-Output written on appendix.pdf (9 pages, 167707 bytes).
+ 3288 strings out of 493607
+ 43552 string characters out of 3149946
+ 111806 words of memory out of 3500000
+ 6525 multiletter control sequences out of 15000+200000
+ 11598 words of font info for 50 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 38i,11n,24p,337b,203s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/niil/.cache/texmf/fonts/pk/ljfour/public/esint/esint10.60
+0pk></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/tex
+mf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/t
+exmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/te
+xmf/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texmf/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texm
+f/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/amsfonts/symb
+ols/msbm7.pfb>
+Output written on "Nollställena till Riemanns Zeta-funktion och dess Beteende 
+på den Kritiska Linjen.pdf" (22 pages, 384903 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 152 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

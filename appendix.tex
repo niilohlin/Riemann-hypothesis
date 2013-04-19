@@ -38,50 +38,50 @@ Om $\Delta z \to 0$ vertikalt är $\Delta z = i \Delta y$ och $vi$ får då:
 		i \lim_{\Delta y \to 0} \left [ \frac {v(x_0, y_0 + \Delta y) - v(x_0, y_0)} {i \Delta y} \right ] \\
 	&= - i \frac {d u} {d y} (x_0, y_0) + \frac {d v} {d y} (x_0, y_0) = f'(z_0)
 \end{align*}
-Om vi sätter real-delarna lika med varandra och imagenärdelarna lika med varandra får vi:
+Om vi sätter real-delarna lika med varandra och imaginärdelarna lika med varandra får vi:
 $$\frac {d u} {d x} = \frac {d v} {d y}, \frac {d u} {d y} = -
 	\frac {d v} {d x}$$.
 \hfill \qed
 
 \paragraph{Definition 1: Klass $C_1$}
-Låt $f$ vara definierad i en mängd $D$. Vi säger att $f$ är av klass $C_1$ och $f$ är partiellt deriverbar och
+Låt $f$ vara definierad i en mängd $D$. Vi säger att $f$ är av klass $C_1$ om $f$ är partiellt deriverbar och
 alla de partiella derivatorna är kontinuerliga i $D$.\\
 \\
-\paragraph{Sats 2:} För två av klass $C_1, P(x, y)$ och $Q(x, y)$ gäller det att:
+\paragraph{Sats 2:} För två funktioner av klass $C_1, P(x, y)$ och $Q(x, y)$ gäller det att:
 $$\int_{\partial D} P\; dx + Q \; dy = \iint_D \left ( \frac {d Q} {d x} - \frac {d P} {d y}
 	\right ) \; dx \; dy$$.
 $$\text{Där $D$ är ett kompakt område och $\partial D$ är randen till $D$.}$$
-Beviset genomförs under förutsättningen att $D$ med räta linjer parallella med y-axeln, kan delas upp i ett 
+Beviset genomförs under förutsättningen att $D$ med räta linjer, parallella med y-axeln, kan delas upp i ett 
 ändligt antal områden av typen:
-$$E \{ (x, y): J(x) \le y \le K(x), a \le x \le b \}$$
+$$E \{ (x, y): \psi(x) \le y \le \varphi(x), a \le x \le b \}$$
 Och att det finns en motsvarande uppdelning för x-axeln
 %bild!!!!
 Inledningsvis visas det att:
 $$\int_{\partial E} P \; dx = \iint_E - \frac {dP} {dy} \; dx \; dy$$.
-$$\iint_E - \frac {dP} {dy} \; dx \; dy = \int^b_{x=a} \left [ -P (x, y) \right ]^{x = K(x)}_{x= J(x)} \; dx$$
+$$\iint_E - \frac {dP} {dy} \; dx \; dy = \int^b_{x=a} \left [ -P (x, y) \right ]^{x = \varphi(x)}_{x= \psi(x)} \; dx$$
 \begin{align}
-	\int_a^bP(x, J(x)) \; dx - \int_b^aP(x, K(x)) \; dx
+	\int_a^bP(x, \psi(x)) \; dx - \int_b^aP(x, \varphi(x)) \; dx
 \end{align}
 Kurvan $\gamma$ i figuren kan framställas med $x$ som parameter:
-$$\gamma = (x, J(x)), a\le x \le b.$$
+$$\gamma = (x, \psi(x)), a\le x \le b.$$
 Den första integralen i $(1)$ kan därför skrivas som 
 $$\int_{\gamma} P \; dx + 0 \; dy = \int_{\gamma} P \; dx. \; (2)$$
 På samma sätt får vi för den andra termen att:
-$$- \int_a^b P(x, K(x)) \; dx = \int_{\sigma} P \; dx \; (3)$$ %vad är det här för en variabel?
-då karringtegralen av de (evetuella) randstyckena $v_1$ och $v_2$ är noll innebär detta att
-addition av $(2)$ och $(3)$ ger $\int_{\partial E} P \; dx$ vilket
-innebär att.
+$$- \int_a^b P(x, \varphi(x)) \; dx = \int_{\sigma} P \; dx \; (3)$$ %vad är det här för en variabel?
+då kurvintegralen av de (eventuella) randstyckena $v_1$ och $v_2$ är noll innebär detta att
+addition av $(2)$ och $(3)$ ger $\int_{\partial E} P \; dx$, vilket
+innebär att:
 $$\int_{\partial E} P \; dx = \iint_E - \frac {dP} {dy} \; dx dy.$$
 genom att addera ihop det här resultatet för alla uppkommande områden av $E$ ger detta:
 $$\int_{\partial D} P \; dx = \iint_D - \frac {dP} {dy} \; dx dy.$$
-Om vi gör på samma sätt med en uppdelning av $D$ med linjer parallella med X-axeln för vi på liknande sätt att:
+Om vi gör på samma sätt med en uppdelning av $D$ med linjer parallella med X-axeln får vi på liknande sätt att:
 $$\int_{\partial D} Q \; dy = \iint_D \frac {dQ} {dx} \; dy dx.$$ 
 genom att addera uttrycken följer nu att:
 $$\iint_D \left ( \frac {dQ} {dx} - \frac {dP} {dx} \right ) \; dx dy = \int_{\partial D} P \; dx + Q \; dy.$$
 \hfill \qed
 \paragraph{Definition 2:} En funktion $f$ är analytisk i ett område $D$ om den har en derivata i alla punkter i $D$.\\
 \\
-\paragraph{Sats 3}: Om $\Gamma$ är en sluten kurva i det kompexa talplanet och $f(z)$ är analytisk i området som innesluts av $\Gamma$ så är:
+\paragraph{Sats 3:} Om $\Gamma$ är en sluten kurva i det komplexa talplanet och $f(z)$ är analytisk i området som innesluts av $\Gamma$ så är:
 $$\int_{\Gamma} f(z) \; dz = 0.$$
 Med den vanliga notationen:\\
 $f(z) = u(x, y) + iv(x, y)$ får vi:
@@ -92,7 +92,7 @@ $$= \int_a^b \left [a(x(t), y(t)) \frac {dx} {dt} - v(x(t), y(t)) \frac {dy} {dt
 u(x(t), y (t)) \frac {dy} {dt} \right ] \; dt$$
 
 $$\int_{\Gamma} f(z) \; dz = \int_\Gamma (u \; dx - v \; dy) + i \int_\Gamma v \; dx + u \; dy$$
-Stas 2 ger nu:
+Sats 2 ger nu:
 $$\int_{\Gamma} f(z) \; dz = \iint_{D^\prime} \left ( - \frac {dv} {dx} - \frac {du} {dy} \right ) \; dxdy +
 i \iint_{D^\prime} \left ( \frac {du} {dx} - \frac {dv} {dy} \right )c \; dxdy$$
 
@@ -101,14 +101,14 @@ dubbelintegralerna är $0$. vilket ger:
 $$\int_\Gamma f(z) \; dz = 0$$
 \hfill \qed
 
-\paragraph{Sats 4:} Alla slutna kurvor i det kompexa talplanet kan krympas ner till ``punktkurvan'' $\zeta = 0$.\\
+\paragraph{Sats 4:} Alla slutna kurvor i det komplexa talplanet kan krympas ner till ``punktkurvan'' $\zeta = 0$.\\
 \\
 Om kurvan $\Gamma_0$ parametisiras av $\zeta = \zeta_0(t), \; 0 \le t \le 1.$
 då kan "krympningen" uppnås genom att multiplicera $\zeta_0(t)$ med en skalfaktor som varierar från $0$ till $1$. 
 Deformationsfunktionen ges då av $\zeta(s, t) = (1-s)(\zeta_0(t)).$ $s = 1$ ger då den önkade krympningen.
 \hfill \qed
 
-\paragraph{Sats 5:} Alla slutna kurvor i det kompexa talplanet kan deformeras till varanda.\\
+\paragraph{Sats 5:} Alla slutna kurvor i det komplexa talplanet kan deformeras till varanda.\\
 \\
 Då alla kurvor kan deformeras till $\zeta = 0$ kan en kurva, $\Gamma_0$ deformeras till $\zeta = 0$, och därifrån deformeras 
 till en annan kurva, $\Gamma_1$ med inversen till deformationsfunktionen från $\Gamma_1 \to \zeta = 0$.\\
@@ -134,7 +134,7 @@ ger i den vänstra integralen:
 	\left [f(z_0) \cdot iv \right ]_0^{2\pi} = f(z_0) \cdot 2 \pi i. \]
 
 den högra integralen i $(1) \rightarrow 0$ då radien av cirkeln $\rightarrow 0$.
-Detta visas genom att sätta $M_r := max [|f(z) - f(z_0)|; z \text{ på } C_r]$
+Detta visas genom att sätta $M_r := \operatorname{max} [|f(z) - f(z_0)|; z \text{ på } C_r]$
 Detta innebär att
 
 \[
@@ -185,11 +185,11 @@ Detta kallas för en Laurent-serie\\
 Låt $\Gamma$ vara en sluten kurva runt $z$.
 Låt därefter $\Gamma$ se ut som en ``donut'' med en ``bit'' borta.
 %biiild
-Låt $\Gamma'$ vara den ``borttagna biten''. då $f(z)$ är analytisk i hela områdetsom innesluts av $\Gamma'$ ger Sats 3 att.
+Låt $\Gamma'$ vara den ``borttagna biten''. då $f(z)$ är analytisk i hela området som innesluts av $\Gamma'$ ger Sats 3 att.
 \[
-	\frac {1} {2 \pi i} \int_{\Gamma'} \frac {f(\zeta)} {\zeta - z} \; d\zeta = 0'
+	\frac {1} {2 \pi i} \int_{\Gamma'} \frac {f(\zeta)} {\zeta - z} \; d\zeta = 0
 \]
-därmed följer att vi kan ``sätt tillbaka biten''. Då integralen var $= 0$ följer att:
+därmed följer att vi kan ``sätta tillbaka biten''. Då integralen var $= 0$ följer att:
 \[
 	f(z) = \frac {1} {2 \pi i} \cdot \int_{\Gamma + \Gamma'} \frac {f(\zeta)} {\zeta - z} \; dz
 \]
@@ -199,7 +199,7 @@ då integralerna längs linjesegmenten tar ut varandra följer det att:
 		\ointctrclockwise_{C_2} \frac {f(\zeta)} {\zeta - z} \; d\zeta \right ) \quad (1)
 \]
 \[
-	f(z) = \sum_{k = 0}^\infty \frac {f^{(n)}(z_0)} {n!} (z - z_0)^n \quad \text{ taylorpolynom }
+	f(z) = \sum_{k = 0}^\infty \frac {f^{(n)}(z_0)} {n!} (z - z_0)^n \quad \text{ (taylorpolynom) }
 \]
 
 Sats 7 ger nu:
@@ -207,7 +207,7 @@ Sats 7 ger nu:
 	f(z) = \sum_{n = 0}^\infty a_n (z - z_0)^n = \frac {1} {2 \pi i} \cdot \ointctrclockwise_{C_2} \frac 
 		{f(\zeta)} {\zeta - z} \; d\zeta
 \]
-Om man nu fokuserar på integralen runt $C_1$ i $(1)$ så ser man att då $z$ ligger untanför $C_1$ 
+Om man nu fokuserar på integralen runt $C_1$ i $(1)$ så ser man att då $z$ ligger utanför $C_1$ 
 måste vi integrera kring en annan punkt.
 \[
 	\frac {1} {\zeta - z} = \frac {1} {(\zeta - z) - (z - z_0)} = - \frac {1} {(z - z_0)}
@@ -224,8 +224,8 @@ taylorpolynomet till den högra faktorn ger nu:
 \]
 insättning i integralen ger nu:
 \[ %wuuuut
-	- \frac {1} {2 \pi i} \varointclockwise f(\zeta) \cdot \sum_{k = 1}^\infty \frac {(\zeta - z_0)^{k - 1}} {(z - z_0)^k} \; d\zeta
-		- \sum_{k = 1}^\infty - 2 \pi i \cdot \varointclockwise_{C_1} \frac {f(\zeta)} {(\zeta - z_0)^{-k + 1}} \; d\zeta \cdot
+	- \frac {1} {2 \pi i} \varointclockwise_{C_1} f(\zeta) \cdot \sum_{k = 1}^\infty \frac {(\zeta - z_0)^{k - 1}} {(z - z_0)^k} \; d\zeta
+	= \sum_{k = 1}^\infty -\frac{1} {2 \pi i} \cdot \varointclockwise_{C_1} \frac {f(\zeta)} {(\zeta - z_0)^{-k + 1}} \; d\zeta \cdot
 			(z - z_0)^{-k} = \sum_{k = 1}^\infty a_{-k} (z - z_0)^{-k}
 \] %överväg radbrytning
 %\[
@@ -238,7 +238,7 @@ Ekvation $(1)$ blir nu:
 \hfill \qed
 
 \paragraph{Sats 9:}
-Om $f$ har en singularitet i punkten $z_0$ så ,r linjeintegralen runt singulariteten $= 2 \pi i \cdot a_{-1}$.\\
+Om $f$ har en singularitet i punkten $z_0$ så är linjeintegralen runt singulariteten $= 2 \pi i \cdot a_{-1}$.\\
 \\
 Sats 8 ger att $f(z) = \sum\limits_{j = - \infty}^\infty a_j (z - z_0)^j$
 \[
@@ -262,8 +262,8 @@ Sats 8 ger att $f(z) = \sum\limits_{j = - \infty}^\infty a_j (z - z_0)^j$
 	\right ]_0^{2\pi}
 	= 2 \pi i
 \]
-för alla $j \neq -1$ blir integralen $ = 0$ och för $j = -1$ blir integralen like med $2 \pi i a_{- 1}$.
-alltså:
+för alla $j \neq -1$ blir integralen $ = 0$ och för $j = -1$ blir integralen lika med $2 \pi i a_{- 1}$.
+Alltså:
 \[
 	\ointctrclockwise_{C_r} f(z) \; dz = 2 \pi i \cdot a_{-1}
 \]
