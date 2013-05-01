@@ -1,63 +1,146 @@
-\documentclass{article}
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{graphicx}
-\usepackage{esint}
-\usepackage[swedish]{babel}
-\usepackage[utf8]{inputenc}
+\section*{Appendix}
 
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\fpart} { \{ } { \} }
-\begin{document}
-\title{Appendix}
-\author{Linus Bergkvist}
-\date{}
-\maketitle
+\paragraph{Definition: Fourierserie och Fouriertransform. \\}
+Eulers formel ger att $e^{i \cdot x} = cos(x) + i \cdot sin(x)$ Men går det att uttrycka en funktion som en oändlig summa
+med sinus och cosinusvågor?\\
+Mer matematisk blir frågan om kan man skriva en funktion $f(t)$ som 
+\[
+	f(t) = \sum_{n = - \infty}^\infty C_n \cdot e^{i \cdot n \cdot t}
+\]
+Detta går om $f(t)$ är periodisk med perioden $2 \pi$. Om så är fallet gäller:
+\begin{align*}
+	&f(t) = \sum_{n = - \infty}^\infty C_n \cdot e^{i \cdot n \cdot t} \\
+	&f(t) \cdot e^{-imt} = \sum_{n = - \infty}^\infty C_n(e^{i(n - m) \cdot t}) \\
+	&\int_{-\pi}^\pi f(t) \cdot e^{-imt}\; dt= \int_{-\pi}^\pi \sum_{n = - \infty}^\infty C_n \cdot e^{i(n - m) \cdot t}\; dt=
+	\sum_{n = - \infty}^\infty C_n \cdot \int_{-\pi}^\pi e^{i (n - m) \cdot t}\; dt\\
+\end{align*}
+Integralen på höger sida $= 0 $ om $n \ne m$ och $= 2\pi $ om $n = m$
+\[
+	\int_{-\pi}^\pi f(t) \cdot e^{-i \cdot m \cdot t}\; dt 
+		= C_n \cdot 3\pi = C_m \cdot 2\pi \Leftrightarrow C_m 
+		= \frac 1 {2\pi} \cdot \int_{-\pi}^\pi f(t) \cdot e^{i \cdot m \cdot t}\; dt
+\]
+Mer generellt så gäller att om $f(t)$ har en Period $L$ så är:
+\begin{align*}
+	f(t) &= \sum_{n = - \infty}^\infty C_n \cdot e^{i \cdot n \cdot 2\pi \cdot \frac t L} \\ %att \fraca eller att inte \fraca
+	\text{där } C_n &= \frac 1 L \int_{- L / 2}^{L / 2} f(t) \cdot e^{- \frac {i \cdot n \cdot 2\pi} {L}} 
+\end{align*} %det här måste kollas till. Gränserna på integralen och aligningen på texten samt ekvationerna
 
-\noindent
+där $C_n$ kallas för den n:te Fourierkoefficienten till $f(t)$. \\
+Fouriertransformen av en funktion f(t) definieras som:
+\[
+	\mathcal{F}(u) = \frac 1 {2\pi} \cdot
+	\int_{-\infty}^\infty f(t) \cdot e^{- i \cdot u \cdot t} \; dt
+\]
+\paragraph{Sats 1:} 
+$\sum\limits_{n \in \mathbb{Z}} f(n) = \sum\limits_{n \in \mathbb{Z}} \hat{f}(m)$ där $\hat{f}(m)$ är Fouriertransformen till $f(n)$.
+\\
+{\bf Bevis:} \\
+Vi börjar med att definiera $g(x)$ som $\sum\limits_{n \in \mathbb{Z}} f(x + n)$ eftersom $g(x)$ är periodisk med perioden $1$
+kan vi skriva ett uttryck för dess Fourierkoefficienter.
+\begin{align*}
+	\hat{g_k} &= \int_0^1 \sum_{n \in \mathbb{Z}} f(x + n) \cdot e^{-ikx}\; dx \\
+			  &= \sum_{n \in \mathbb{Z}} \int_0^1 f(x + n) \cdot e^{-ikx}\; dx \\
+			  &= \sum_{n \in \mathbb{Z}} \int_n^{n + 1} f(x) \cdot e^{-ikx}\; dx \\
+			  &= ... \int_{-1}^0 f(x) \cdot e^{-ikx}\; dx + \int_0^1 f(x) - e^{-ikx}\; dx + \int_1^2 f(x) \cdot e^{-ikx}\; dx ... \\
+			  &= \int_{- \infty}^\infty f(x) \cdot e^{-ikx}\; dx = \hat{f}(x)
+\end{align*}
+Som är fouriertransformen av $f(x)$.
+\[
+	g(x) = \sum_{n \in \mathbb{Z}} f(x + n) = \sum_{k \in \mathbb{Z}} \hat{f}(k) \cdot e^{ikx}%ska det vara -ikx?
+\]
+som är fourierserien till $g(x)$. Om vi nu väljer $x = 0$ får vi:
+\[
+	\sum_{n \in \mathbb{Z}} f(n) = \sum_{k \in \mathbb{Z}} \hat{f}(k) \cdot e^0 = \sum_{k \in \mathbb{Z}} \hat{f}(k)
+\]
+$\hfill \qed$
 
-\paragraph{Sats 1:}
+\paragraph{Sats 2:}
 Om $f(z) = u(x, y) + iv(x, y)$ är differentierbar i punkten $z_0 = x_0 + iy_0$ måste:
-$$\frac {d u} {d x} = \frac {d v} {d y} 
-	\text{ och } \frac {d u} {d y} = - \frac {d v} {d x}.$$
-
+\newcommand{\du}[2] {
+	\frac {d #1} {d #2} 
+}
+\[
+	\du u x = \du v y \text{ och }
+	\du u y = -\du v x
+\]
+{\bf Bevis:}
+\\
 Vi utgår från derivatans definition:
 $$f'(z_0) = \lim_{\Delta z \to 0} \frac {f(z_0 + \Delta z) - f(z_0)} {\Delta z} $$
 $\Delta z = \Delta x + i \Delta y$ får gå mot $0$ från alla riktningar i det komplexa planet.
 Om $\Delta z \to 0$ horisontellt är $\Delta z = \Delta x$ och vi får då:
+\newcommand{\xtz} {
+	\Delta x \to 0
+}
+\newcommand{\bracketDelta}[4] {
+	\lim_{\Delta #1 \to 0} \left [
+		\frac {
+			#2(x_0, #3) - #2(x_0, y_0)
+		} {
+			#4
+		}
+	\right ]
+}
+
+\newcommand{\uberBracket}[6] {
+	\begin{align*}
+		&= \bracketDelta #2 u #3 #4 + i \bracketDelta #2 v #3 #4 \\
+		&= #5 \frac {d u} {d #2} (#2_0, #6_0) + i \frac {dv} {d #2} (x_0, y_0) = f'(z_0)
+	\end{align*}
+}
+
+\uberBracket{
+	f'(z_0) &= \lim_{\xtz} \frac {
+		u(x_0 + \Delta x, y) + iv(x_0 + \Delta x, y) - u(x_0, y_0) - iv(x_0, y_0)
+		} {
+			\Delta x
+		} \\
+} {x} {+ \Delta x,y} {\Delta x} {} {y}
+
 \begin{align*}
-	f'(z_0) &=  \lim_{\Delta x \to 0} \frac {u(x_0 + \Delta x, y) + iv(x_0 + \Delta x, y) - u(x_0, y_0) - iv(x_0, y_0)} {\Delta x} \\
-		&= \lim_{\Delta x \to 0} \left [ \frac {u(x_0 + \Delta x, y) - u(x_0, y_0)} {\Delta x} \right ] + i \cdot \lim_{\Delta x \to 0} \left [ \frac {v(x_0 + \Delta x, y_0) - v(x_0, y_0)} {\Delta x} \right ] \\
+	f'(z_0) &=  \lim_{\xtz} \frac {
+		u(x_0 + \Delta x, y) + iv(x_0 + \Delta x, y) - u(x_0, y_0) - iv(x_0, y_0)
+	} {
+		\Delta x
+	} \\
+	&= \bracketDelta x u {+ \Delta x,y} {\Delta x} 
+	+ i \bracketDelta x v {+ \Delta x,y} {\Delta x} \\
 	&= \frac {d u} {d x} (x_0, y_0) + i \frac {d v} {d x} (x_0, y_0) = f'(z_0)
 \end{align*}
 Om $\Delta z \to 0$ vertikalt är $\Delta z = i \Delta y$ och $vi$ får då:
 \begin{align*}
-	f'(z_0) &= \lim_{\Delta y \to 0} \left [ \frac {u(x_0, y_0  + \Delta y) - u(x_0, y_0)} {i \Delta y} \right ] +
-		i \lim_{\Delta y \to 0} \left [ \frac {v(x_0, y_0 + \Delta y) - v(x_0, y_0)} {i \Delta y} \right ] \\
+	f'(z_0)
+	&= \bracketDelta y u {y_0 + \Delta y} {i \Delta y}
+	+ i \bracketDelta y v {y + y_0 + \Delta y} {i\Delta y} \\
 	&= - i \frac {d u} {d y} (x_0, y_0) + \frac {d v} {d y} (x_0, y_0) = f'(z_0)
 \end{align*}
 Om vi sätter real-delarna lika med varandra och imaginärdelarna lika med varandra får vi:
 $$\frac {d u} {d x} = \frac {d v} {d y}, \frac {d u} {d y} = -
-	\frac {d v} {d x}$$.
+	\frac {d v} {d x}$$
 \hfill \qed
 
 \paragraph{Definition 1: Klass $C_1$}
 Låt $f$ vara definierad i en mängd $D$. Vi säger att $f$ är av klass $C_1$ om $f$ är partiellt deriverbar och
 alla de partiella derivatorna är kontinuerliga i $D$.\\
 \\
-\paragraph{Sats 2:} För två funktioner av klass $C_1, P(x, y)$ och $Q(x, y)$ gäller det att:
+\paragraph{Sats 3:} För två funktioner av klass $C_1, P(x, y)$ och $Q(x, y)$ gäller det att:
 $$\int_{\partial D} P\; dx + Q \; dy = \iint_D \left ( \frac {d Q} {d x} - \frac {d P} {d y}
-	\right ) \; dx \; dy$$.
+	\right ) \; dx \; dy$$\\
 $$\text{Där $D$ är ett kompakt område och $\partial D$ är randen till $D$.}$$
+\\
+{\bf Bevis:} \\
 Beviset genomförs under förutsättningen att $D$ med räta linjer, parallella med y-axeln, kan delas upp i ett 
 ändligt antal områden av typen:
 $$E \{ (x, y): \psi(x) \le y \le \varphi(x), a \le x \le b \}$$
 Och att det finns en motsvarande uppdelning för x-axeln
 %bild!!!!
+\begin{center}
+	\includegraphics[scale=0.5]{linus_0001.jpg}
+	{\it Figur 1}
+\end{center}
 Inledningsvis visas det att:
-$$\int_{\partial E} P \; dx = \iint_E - \frac {dP} {dy} \; dx \; dy$$.
+$$\int_{\partial E} P \; dx = \iint_E - \frac {dP} {dy} \; dx \; dy$$
 $$\iint_E - \frac {dP} {dy} \; dx \; dy = \int^b_{x=a} \left [ -P (x, y) \right ]^{x = \varphi(x)}_{x= \psi(x)} \; dx$$
 \begin{align}
 	\int_a^bP(x, \psi(x)) \; dx - \int_b^aP(x, \varphi(x)) \; dx
@@ -77,12 +160,14 @@ $$\int_{\partial D} P \; dx = \iint_D - \frac {dP} {dy} \; dx dy.$$
 Om vi gör på samma sätt med en uppdelning av $D$ med linjer parallella med X-axeln får vi på liknande sätt att:
 $$\int_{\partial D} Q \; dy = \iint_D \frac {dQ} {dx} \; dy dx.$$ 
 genom att addera uttrycken följer nu att:
-$$\iint_D \left ( \frac {dQ} {dx} - \frac {dP} {dx} \right ) \; dx dy = \int_{\partial D} P \; dx + Q \; dy.$$
+$$\iint_D \left ( \frac {dQ} {dx} - \frac {dP} {dy} \right ) \; dx dy = \int_{\partial D} P \; dx + Q \; dy.$$
 \hfill \qed
 \paragraph{Definition 2:} En funktion $f$ är analytisk i ett område $D$ om den har en derivata i alla punkter i $D$.\\
 \\
-\paragraph{Sats 3:} Om $\Gamma$ är en sluten kurva i det komplexa talplanet och $f(z)$ är analytisk i området som innesluts av $\Gamma$ så är:
+\paragraph{Sats 4:} Om $\Gamma$ är en sluten kurva i det komplexa talplanet och $f(z)$ är analytisk i området som innesluts av $\Gamma$ så är:
 $$\int_{\Gamma} f(z) \; dz = 0.$$
+\\
+{\bf Bevis:}\\
 Med den vanliga notationen:\\
 $f(z) = u(x, y) + iv(x, y)$ får vi:
 $$\int_{\Gamma} f(z) \; dz = \int_a^b f(z(t)) \frac {dz(t)} {dt} \; dt = \int_a^b [a(x(t), y(t)) + iv(x(t), y(t)) ]
@@ -92,29 +177,18 @@ $$= \int_a^b \left [a(x(t), y(t)) \frac {dx} {dt} - v(x(t), y(t)) \frac {dy} {dt
 u(x(t), y (t)) \frac {dy} {dt} \right ] \; dt$$
 
 $$\int_{\Gamma} f(z) \; dz = \int_\Gamma (u \; dx - v \; dy) + i \int_\Gamma v \; dx + u \; dy$$
-Sats 2 ger nu:
+Sats 3 ger nu:
 $$\int_{\Gamma} f(z) \; dz = \iint_{D^\prime} \left ( - \frac {dv} {dx} - \frac {du} {dy} \right ) \; dxdy +
-i \iint_{D^\prime} \left ( \frac {du} {dx} - \frac {dv} {dy} \right )c \; dxdy$$
+i \iint_{D^\prime} \left ( \frac {du} {dx} - \frac {dv} {dy} \right ) \; dxdy$$
 
-där $D'$ är området som innesluts av $\Gamma$. Men ekvationerna från Sats 1 ger nu att
+där $D'$ är området som innesluts av $\Gamma$. Men ekvationerna från Sats 2 ger nu att
 dubbelintegralerna är $0$. vilket ger:
 $$\int_\Gamma f(z) \; dz = 0$$
 \hfill \qed
 
-\paragraph{Sats 4:} Alla slutna kurvor i det komplexa talplanet kan krympas ner till ``punktkurvan'' $\zeta = 0$.\\
+\paragraph{Sats 5:} $f(z_0) = \frac 1 {2\pi i} \cdot \int_\Gamma \frac {f(z)} {z - z_0} \; dz$ \\
 \\
-Om kurvan $\Gamma_0$ parametisiras av $\zeta = \zeta_0(t), \; 0 \le t \le 1.$
-då kan "krympningen" uppnås genom att multiplicera $\zeta_0(t)$ med en skalfaktor som varierar från $0$ till $1$. 
-Deformationsfunktionen ges då av $\zeta(s, t) = (1-s)(\zeta_0(t)).$ $s = 1$ ger då den önkade krympningen.
-\hfill \qed
-
-\paragraph{Sats 5:} Alla slutna kurvor i det komplexa talplanet kan deformeras till varanda.\\
-\\
-Då alla kurvor kan deformeras till $\zeta = 0$ kan en kurva, $\Gamma_0$ deformeras till $\zeta = 0$, och därifrån deformeras 
-till en annan kurva, $\Gamma_1$ med inversen till deformationsfunktionen från $\Gamma_1 \to \zeta = 0$.\\
-
-\paragraph{Sats 6:} $f(z_0) = \frac 1 {2\pi i} \cdot \int_\Gamma \frac {f(z)} {z - z_0} \; dz$ \\
-\\
+{\bf Bevis:}\\
 $\frac {f(z)} {z - z_0}$ är analytisk överallt i området som innesluts av $\Gamma$ förutom i punkten
 $z = z_0$. Vi kan därför deformera $\Gamma$ till en cirkel $C_r$ med radien $r$ och 
 som är centrerad kring $z_0$.
@@ -158,11 +232,12 @@ division med $2\pi i$ ger:
 \hfill \qed
 \\
 
-\paragraph{Sats 7:}
+\paragraph{Sats 6:}
 \[
 	f^{(n)}(z_0) = \frac {1} {2 \pi i} \cdot \int_{\Gamma} \frac {f(z)} {(z - z_0)^{(n + 1)}} \; dz \cdot n!
 \]
 \\
+{\bf Bevis:}\\
 Detta inses genom att derivera uttrycket med avseende på $z_0$.
 \begin{align*}
 	f(z_0) &= \frac {1} {2 \pi i} \cdot \int_{\Gamma} \frac {f(z)} {(z - z_0)} \; dz = \frac {1} {2 \pi i} \cdot \int_{\Gamma}
@@ -172,19 +247,24 @@ Detta inses genom att derivera uttrycket med avseende på $z_0$.
 	f'''(z_0) &= \frac {1} {2 \pi i} \cdot 2 \cdot -1 \cdot -3 \cdot \int_{\Gamma} f(z) \cdot (z - z_0)^{-4} \; dz \\
 	\vdots \\
 	f^{(n)}(z_0) &= \frac {1} {2 \pi i} \cdot n! \cdot \int_\Gamma f(z) \cdot (z \ z_0)^{-(n + 1)} \; dz
-\end{align*} %jag fattade inget av sats 7, jag tror att det är fel
+\end{align*} %jag fattade inget av Sats 5, jag tror att det är fel
 \hfill \qed
 \\
-\paragraph{Sats 8:}
+\paragraph{Sats 7:}
 \[
 	f(z) = \sum_{j = - \infty}^\infty a_j (z - z_0)^j. \text{ med } a_j = \frac {1} {2 \pi i} \cdot \ointctrclockwise
 		\frac {f(\zeta)} {(\zeta - z_0)^{j + 1}} \; d\zeta
 \]
 Detta kallas för en Laurent-serie\\
 \\
+{\bf Bevis:}\\
 Låt $\Gamma$ vara en sluten kurva runt $z$.
 Låt därefter $\Gamma$ se ut som en ``donut'' med en ``bit'' borta.
 %biiild
+\begin{center}
+	\includegraphics[scale=0.5]{aoeu.jpg}
+	{\it Figur 2}
+\end{center}
 Låt $\Gamma'$ vara den ``borttagna biten''. då $f(z)$ är analytisk i hela området som innesluts av $\Gamma'$ ger Sats 3 att.
 \[
 	\frac {1} {2 \pi i} \int_{\Gamma'} \frac {f(\zeta)} {\zeta - z} \; d\zeta = 0
@@ -202,7 +282,7 @@ då integralerna längs linjesegmenten tar ut varandra följer det att:
 	f(z) = \sum_{k = 0}^\infty \frac {f^{(n)}(z_0)} {n!} (z - z_0)^n \quad \text{ (taylorpolynom) }
 \]
 
-Sats 7 ger nu:
+Sats 6 ger nu:
 \[
 	f(z) = \sum_{n = 0}^\infty a_n (z - z_0)^n = \frac {1} {2 \pi i} \cdot \ointctrclockwise_{C_2} \frac 
 		{f(\zeta)} {\zeta - z} \; d\zeta
@@ -228,6 +308,7 @@ insättning i integralen ger nu:
 	= \sum_{k = 1}^\infty -\frac{1} {2 \pi i} \cdot \varointclockwise_{C_1} \frac {f(\zeta)} {(\zeta - z_0)^{-k + 1}} \; d\zeta \cdot
 			(z - z_0)^{-k} = \sum_{k = 1}^\infty a_{-k} (z - z_0)^{-k}
 \] %överväg radbrytning
+Där $a_{-k} = -\frac{1} {2 \pi i} \cdot \varointclockwise_{C_1} \frac {f(\zeta)} {(\zeta - z_0)^{-k + 1}} \; d\zeta$.
 %\[
 %	= \sum_{k = 1}^\infty a_{-k} (z - z_0)^{-k}
 %\]
@@ -237,10 +318,11 @@ Ekvation $(1)$ blir nu:
 \]
 \hfill \qed
 
-\paragraph{Sats 9:}
+\paragraph{Sats 8:}
 Om $f$ har en singularitet i punkten $z_0$ så är linjeintegralen runt singulariteten $= 2 \pi i \cdot a_{-1}$.\\
 \\
-Sats 8 ger att $f(z) = \sum\limits_{j = - \infty}^\infty a_j (z - z_0)^j$
+{\bf Bevis:}\\
+Sats 7 ger att $f(z) = \sum\limits_{j = - \infty}^\infty a_j (z - z_0)^j$
 \[
 	\ointctrclockwise_{C_r} f(z) \; dz = \sum_{j = - \infty}^\infty a_j \cdot \ointctrclockwise_{C_r} (z - z_0)^j \; dz
 \]
@@ -270,10 +352,12 @@ Alltså:
 där termen $a_{-1}$ kallas för residualen \\
 \hfill \qed
 
-\paragraph{Sats 10:} $a_{-1} = \lim_{z \to z_0} f(z) \cdot (z - z_0)$\\
+\paragraph{Sats 9:} $a_{-1} = \lim_{z \to z_0} f(z) \cdot (z - z_0)$\\
 \\
+{\bf Bevis:}\\
 Om $f(z)$ har en ``borttagbar'' singularitet i Punkten $z = z_0 \qquad \left ( \frac {1} {z - z_0} \right )$ blir 
-alla koefficienter till $f(z)$'s Laurentserie för $j < -1 = 0$. Detta kan visas med partialintegrering av koeficienterna.
+alla koefficienter till $f(z)$'s Laurentserie för $j < -1 = 0$. Detta på grund av att integralen i $a_k$ för $k < -1$
+inte innesluter en singularitet, och integralen  är därmed, enligt Sats 3, lika med $0$.
 Men om $f(z)$ har en singularitet i punkten $z = z_0$ gäller:
 \begin{align*}
 	&f(z) = \frac {a - 1} {z - z_0} + a_0 + a_1(z - z_0) + a_2(z - z_0)^2 \ldots \\
@@ -282,9 +366,10 @@ Men om $f(z)$ har en singularitet i punkten $z = z_0$ gäller:
 \end{align*}
 \hfill \qed
 \\
-\paragraph{Sats 11:} %kanske ska ändra till "implicerar"
+\paragraph{Sats 10:} %kanske ska ändra till "implicerar"
 Om $A_n = \sum\limits_{i = 0}^n a_1, \quad \text{ då är } \sum\limits_{i = 0}^n a_i \cdot b_i = 
 		\sum\limits_{i = 0}^{n - 1} A_i (b_i - b_{i + 1}) + A_n \cdot b_n$\\
+{\bf Bevis:}\\
 \\
 \[ a_k = A_k - A_{k - 1} \]
 \[
@@ -301,8 +386,8 @@ vi har nu
 		\sum_{k = 0}^{n - 1} A_k (b_k - b_{k + 1}) + A_n \cdot b_n
 \]
 \\
-\paragraph{Sats 12:} $(n^{-s} - (n + 1)^{-s}) = s \cdot \int\limits_n^{n + 1} x^{-s - 1} \; dx$\\
-\\
+\paragraph{Sats 11:} $(n^{-s} - (n + 1)^{-s}) = s \cdot \int\limits_n^{n + 1} x^{-s - 1} \; dx$\\
+{\bf Bevis:}\\
 \[
 	s \cdot \int_n^{n + 1} x^{-s - 1} \; dx = - [ x^{-s} ]_n^{n + 1} = - ((n + 1)^{-s} - n^{-s})
 		= n^{-s} -(n + 1)^{-s}
@@ -319,9 +404,9 @@ $\floor{\pi} = 3, \quad \floor{e} = 2, \quad \floor{38.5} = 38$\\
 exempel:\\
 $\fpart{\pi} = 0.14159265358979 \ldots, \quad \fpart{e} = 0.72182818284590 \ldots, \fpart{38.5} = 0.5$\\
 \\
-\paragraph{Sats 13:} $\frac {s} {s - 1} - s \cdot \int\limits_1^\infty \floor{x} x^{-s - 1} \; dx +
+\paragraph{Sats 12:} $\frac {s} {s - 1} - s \cdot \int\limits_1^\infty \floor{x} x^{-s - 1} \; dx +
 		s \cdot \int\limits_1^\infty \fpart{x} x^{-s - 1} \; dx$ \\
-\\
+{\bf Bevis:}\\
 \[
 	s \cdot \int_1^\infty x^{-s - 1} (\floor{x} + \fpart{x}) \; dx = s \cdot \int_1^\infty x^{-s} \; dx
 \]
@@ -333,33 +418,35 @@ $\fpart{\pi} = 0.14159265358979 \ldots, \quad \fpart{e} = 0.72182818284590 \ldot
 \]
 \hfill \qed
 \\
-\paragraph{Sats 14:} $\zeta(s) = \frac {s} {s - 1} - s \int\limits_1^\infty \fpart{x} x^{-s - 1} \; dx$\\
+\paragraph{Sats 13:} $\zeta(s) = \frac {s} {s - 1} - s \int\limits_1^\infty \fpart{x} x^{-s - 1} \; dx$\\
 \\
+{\bf Bevis:}\\
 \[
 	\zeta(s) = \sum_{n \leq n} \frac {1} {n^{-s}}
 \]
-Sats 11 ger:
+Sats 10 ger:
 \[
 	\sum_{n \leq 1} \frac {1} {n^{-s}} = \sum_{n \leq 1} n \cdot (n^{-s} - (n + 1)^{-s})
 \]
-Sats 12 ger nu att:
+Sats 11 ger nu att:
 \[
 	s \sum_{n \leq 1} n (n^{-s} - (n + 1)^{-s}) = s \sum_{n \leq 1} \int_n^{n + 1} \floor{x} x^{-s -1} \; dx =
 		s \int_1^\infty \floor{x} x^{-s - 1} \; dx
 \]
-Sats 13 ger slutligen att:
+Sats 12 ger slutligen att:
 \[
 	\int_1^\infty \floor{x} x^{-s - 1} \; dx = \frac {s} {s - 1} - s \int_1^\infty \fpart{x} x^{-s - 1} \; dx = \zeta(s)
 \]
 \hfill \qed
 \\
-\paragraph{Sats 15:} $\zeta(s)$ har en singularitet i $s = 1$ med residualen $1$.\\
+\paragraph{Sats 14:} $\zeta(s)$ har en singularitet i $s = 1$ med residualen $1$.\\
 \\
-Sats 10 visar att residualen $= \lim_{z - z_0} f(z)(z - z_0)$
+{\bf Bevis:}\\
+Sats 9 visar att residualen $= \lim_{z - z_0} f(z)(z - z_0)$
 \[
 	\zeta(s) - (s - 1) = \left (
 		\frac {s} {s - 1} - s \cdot \int_1^\infty \fpart{x} x^{-s - 1} \; dx 
-	\right )
+		\right )
 	(s - 1)
 \]
 \[
@@ -368,3 +455,5 @@ Sats 10 visar att residualen $= \lim_{z - z_0} f(z)(z - z_0)$
 \]
 \hfill \qed
 \end{document}
+
+

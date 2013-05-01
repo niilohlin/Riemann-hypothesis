@@ -1,0 +1,32 @@
+\ProvidesPackage{custom}
+
+\usepackage{custom}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+
+\def \width {3mm}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\fpart} { \{ } { \} }
+\newcommand{\ud}{\; \mathrm{d}}
+
+\newcommand{\sats}[3]{
+	\paragraph{Sats #1}
+	#2
+	\paragraph{Bevis:\\}
+	#3\\
+	\hfill\qed
+}
+
+\newcommand{\mRe}[1] {
+	\operatorname{Re}(#1)
+}
+
+\newcommand{\smartint}[2] {
+	\int_{#1 - #2}^{#1 + #2}
+}

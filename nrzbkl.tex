@@ -1,0 +1,547 @@
+\documentclass[a4paper,twoside]{article}%[fleqn] kan vara snyggt
+\usepackage{custom}
+
+\begin{document}
+\title{Nollställena till Riemanns Zeta-funktion och dess Beteende på den Kritiska Linjen}
+\author{Linus Bergkvist}
+\date{}
+\maketitle
+
+\pagebreak
+\section*{Introduktion}
+Riemannhypotesen beskrevs för första gången 1859 av Bernhard Riemann och lyder:
+Alla icke-triviala nollställen till Riemanns Zeta-funktion har Realdelen $\frac 1 2$.
+För \smash{$\mRe{s} \geq 1$} definieras Riemanns Zeta-funktion som $\sum\limits_{n = 1}^\infty \frac 1 {n^s}$. 
+För att kunna studera dess nollställen i det komplexa talplanet måste man alltså först hitta
+ett sätt att beskriva Zeta-funktionen på som gäller för alla $s$ i $C$. 
+Arbetet är i huvudsak uppdelat i 2 delar och ett Appendix. I den första delen begränsas 
+Zeta-funktionens icke-triviala nollställen till en ``remsa'' i det komplexa talplanet 
+(de triviala nollställena $(-2, -4, -6, -8\ldots)$ får också sin förklaring). 
+I den andra delen studeras nollställena längs den ``kritiska linjen'' $(\frac 1 2 + it,\quad t \in \mathbb{R})$.
+Det finns även ett appendix i vilket vissa, inte helt uppenbara satser som används i arbetet, härleds.
+
+\section*{Del 1}
+\paragraph{Sats 1:}
+Det finns inga nollställen till Riemanns zeta-funktion med Realdelen $> 1$.\\
+\\
+{\bf Bevis:} \\
+För $s$ med $\mRe{s} > 1$ definieras Riemanns zeta-funktion som 
+$\zeta(s) = \sum\limits_{n = 1}^\infty \frac {1} {n^s}$ 
+\begin{equation}
+	\begin{aligned}
+		&\zeta(s) = \frac 1 {1^s} + \frac 1 {2^s} + \frac 1 {3^s} + \frac 1 {4^s} \ldots \notag\\
+		&\zeta(s) \cdot \frac 1 {2^s} = \frac 1 {2^s} + \frac 1 {4^s} + \frac 1 {6^s} + \frac 1 {8^s} \ldots \\
+		&\zeta(s) - \frac {\zeta(s)} {2^s} = \frac 1 {1^s} + \frac 1 {3^s} + \frac 1 {5^s} \ldots &
+		\hspace{\width} &\text{Vi har nu tagit bort alla multiplar av } \frac 1 {2^s} \\
+		&\zeta(s) (1 - \frac 1 {2^s}) \cdot \frac 1 {3^s} = \frac 1 {3^s} + \frac 1 {9^s} + \frac 1 {15^s} \ldots\\
+		&\zeta(s)(1 - \frac 1 {2^s})(1 - \frac 1 {3^s}) = \frac 1 {1^s} + \frac 1 {5^s} + \frac 1 {7^s} \ldots &
+		\hspace{\width} &\text{Vi har nu tagit bort alla} \\
+		& & \hspace{\width} &\text{återstående multiplar av } \frac 1 {3^s} \\
+	\end{aligned}
+	\phantom{\hspace{4cm}}
+\end{equation}
+Om man gör så med alla primtal får man: 
+\begin{equation}
+	\begin{aligned}
+		\notag
+		&\zeta(s) \cdot (1 - \frac 1 {2^s})(1 - \frac 1 {3^s})(1 - \frac 1 {5^s}) \ldots = \frac 1 {1^s} = 1 \Leftrightarrow \\  
+		&\zeta(s)  = \frac 1 {(1 - \frac 1 {2^s})(1 - \frac 1 {3^s})\ldots} = \prod_p \frac 1 {1 - p^{-s}}.\hspace{\width} \mRe{s} > 1 \\
+		&\frac {\zeta(s)} {\displaystyle\prod_p \frac 1 {(1 - p^{-s})}} = 1 = \zeta(s) \cdot \prod_p (1 - p^{-s}) \\
+	\end{aligned}
+\end{equation}
+\\
+Vilket visar att $\zeta(s) \ne 0 \text{ För } \mRe{s} > 1$
+
+\paragraph{Definition:}
+Den kompletta zeta-funktionen.\\
+\[
+	\xi (s) = \frac 1 2 \cdot s(s - 1) \cdot \pi^{-s/2} \cdot \Gamma(\frac s 2) \cdot \zeta(s) 
+\]
+där
+\[
+	\Gamma(s) = \int_0^\infty t^{s - 1} \cdot e^{-t}\; dt
+\]
+
+%\pagebreak
+\paragraph{Sats 2:} Den kompletta zeta-funktionens nollställen är nollställen för Riemanns zeta-funktion.\\
+\\
+{\bf Bevis:}\\
+Det här är ett väldigt kort bevis. Eftersom varken ${\frac 1 2 \cdot s, (s - 1), \pi^{-s/2}}$ eller $\Gamma(\frac s 2)$
+har några nollställen utöver punkterna $s = 0$ och $s = 1$ så måste $\xi(s)$ ha samma nollställen som $\zeta(s)$.
+
+\paragraph{Sats 3:} $\xi(s) = \xi(1 - s)$. \\
+\\
+{\bf Bevis:}\\
+\newcommand{\myG} {
+	\Gamma(\frac s 2) = \int_0^\infty
+}
+\[
+	\myG t^{s/2 - 1} \cdot e^{-t}\; dt
+\]
+Vi gör substitutionen $t = \pi \cdot n^2 \cdot x$.
+\[
+	\myG \pi^{(s/2 - 1)} \cdot n^{2^{(s / 2 - 1)}} \cdot x^{(s/2 - 1)} \cdot e^{-\pi \cdot n^2 \cdot x}\; dx
+\]
+\[
+	\pi^{-s/2} \cdot \Gamma(\frac s 2) \cdot n^{-s} = \int_0^\infty x^{s/2 - 1} \cdot e^{-\pi n^2 x}\; dx
+\]
+Vi vet att $\zeta(s) = \sum\limits_{n \ge 1} n^{-s}$\\
+Vi summerar båda leden över n med $n>0$ och erhåller då:\\
+$$\sum_{n \ge 1} \pi^{-s/2} \cdot \Gamma(\frac s 2) \cdot n^{-s} = \pi^{-s/2} \cdot \Gamma(\frac s 2) \cdot \zeta(s) = 
+\int_0^\infty x^{s/2 - 1} \cdot \sum_{n \ge 1} e^{-\pi n^2 x}\; dx$$
+framöver betecknar vi $\sum\limits_{n \ge 1} e^{-\pi x n^2} \text{ som } \omega(x)$.
+Nu delar vi upp integralen vid $1$ och erhåller:%linus skrev får istället för erhåller
+\[
+	\int_0^1 x^{s/2 - 1} \cdot \omega(x)\; dx + \int_1^\infty x^{s/2 - 1} \cdot \omega(x)\; dx
+\]
+För att få samma integrationgränser i de båda integralerna gör vi substitutionen $x = x^{-1}$ i den första integralen och erhåller då:
+\[
+	\int_1^\infty x^{-s/2 - 1} \cdot \omega(x^{-1})\; dx + \int_1^\infty x^{-s/2 - 1} \cdot \omega(x)\; dx
+\]
+Vi definierar nu funktionen $\theta(x)$ som:
+\[
+	\theta(x) = \sum_{n \in \mathbb{Z}} e^{-xn^2\pi}
+\]
+Eftersom $n^2=(-n)^2$ och $e^{-x0^2\pi} = 1$ får vi att 
+\[
+	\theta(x) = 2\omega(x) + 1
+\]
+Vi använder nu Fouriertransformen på $e^{-\pi n^2 x}$ och erhåller
+\[
+	\mathcal{F}(e^{-\pi n^2 x})(u) = x^{-1/2} \cdot e^{-\pi u^2/x}
+\]
+Vi använder därefter summationsformeln från Sats 1 i appendix och erhåller då:
+\[
+	\theta(x) = x^{-1/2}\theta(x^{-1})
+\]
+\[
+	2\omega(x) + 1 = \frac {
+		1
+	} {
+	\sqrt{x}
+	} 
+	(2\omega(x^{-1}) + 1) \Leftrightarrow 
+		\omega(x^{-1}) = \omega(x) \cdot \sqrt{x} + 
+			\frac {
+				\sqrt{x}
+			}
+			2 - \frac 1 2
+\]
+Om vi nu använder vårt uttryck för $\omega(x^{-1})$ i den tidigare integralen erhåller vi:
+\[
+	\int_1^\infty x^{-s/2 - 1} \cdot 
+	\omega(x^{-1})\; dx = 
+	- \frac 1 s + \frac 1 {s - 1} + 
+	\int_1^\infty x^{(s + 1)/2} \cdot
+	\omega(x)\; dx
+\]
+Och hela ekvationen blir då:
+\[
+	\xi(s) = \pi^{-s/2} \cdot 
+	\Gamma(\frac s 2) \cdot 
+	\zeta(s) = - \frac 1 {s(1 - s)} + 
+	\int_1^\infty(x^{s/2 - 1} + 
+	x^{-(s + 1)/2}) \cdot \omega(x)\; dx
+\]
+Om vi byter ut $s$ mot $(1 - s)$ i det högra uttrycket erhåller vi samma uttryck igen. Därför gäller det att $\xi(s) = \xi(1 - s)$ \\
+\hfill \qed\\
+(Division med $\Gamma(\frac s 2 )$ i den sista likheten, innebär att zeta-funktionen har nollställen varje gång då $\Gamma(\frac s 2 )$ har en singularitet. På så sätt erhålls de ``triviala nollställena'')
+\\
+\paragraph{Sats 4:} De triviala nollställena till Riemanns zeta-funktion är de enda nollställena utanför intervallet $0 < \mRe{s} < 1$.\\
+\\
+{\bf Bevis:}\\ %Skrivas i obestämd form ex. I Sats 1 bevisades att \ldots?
+I Sats 1 bevisades det att $\zeta(s)$ inte har några nollställen för $\zeta(s)$ och i Sats 3 bevisade jag att $\xi(s) = \xi(1 - s)$.
+Om vi antar att det finns en punkt p med $\mRe{p} < 0$ sådan att $\zeta(p) = 0$ innebär det av Sats 2 att $\xi(p) = 0 \Leftrightarrow
+\xi(1 - p) = 0 \Leftrightarrow \zeta(1 - p) = 0$ men om $\mRe{p} < 0$ är $\mRe{1 - p} > 1$. Då innebär det att det finns en punkt
+$q = 1 - p$ med $\mRe{q} > 1$ sådan att $\zeta(q) = 0$. Men detta strider mot Sats 1. Det kan alltså inte finnas en punkt $p$ med
+$\mRe{p} < 0$ sådan att $\zeta(p) = 0$. \\
+\hfill \qed %Ska skrivas om så att ekvationerna inte linebreakas
+%I slutet på andra meningen i stas 5 så ska det stå "med \operatorname{Re} > 1"
+%efter zetat. vilket zeta?
+
+\pagebreak
+
+\paragraph{Sats 5:} $\ln(1 - i) = - \sum\limits_{n = 1}^\infty \frac {x^n} n$ \\
+\\
+{\bf Bevis:}\\
+\[
+	f(x) = \ln(1 - x) \Rightarrow f(0) = \ln(1) = 0
+\]
+Definitionen av Maclaurinpolynom är:
+\newcommand{\mymac}[1] {
+	f(x) = \sum_{n = #1}^\infty \frac {
+		f^{(n)}(0) \cdot x^n
+	} {
+		n!
+	}
+}
+\[
+	\mymac{0}
+\]
+men då $\ln(1) = 0$ är:
+\[
+	\ln(1 - x) = \mymac{1}
+\]
+Derivering ger att
+\begin{align*}
+	&f^{(n)}(0) = -(n - 1)! \\
+	&\Downarrow \\ 
+	&\ln(1 - x) = \sum_{n = 1}^\infty \frac {-(n - 1)! \cdot x^n} {n!} =
+			- \sum_{n = 1}^\infty \frac {x^n} n
+\end{align*}
+\hfill \qed
+
+\paragraph{Sats 6:} $\zeta(s + it) = 0$ for $s = 1$ omm $\zeta(s)^3 \cdot \zeta(s + it)^4 \cdot \zeta(s + 2it) = 0$ \\
+för $s = 1$. \\
+\\
+{\bf Bevis:}\\
+$\zeta(s)$ har en singularitet för $s = 1$. Men eftersom faktorn $\zeta(s + it)^4$ är av högre grad kan singulariteterna
+för $\zeta(s)$ inte ta ut ett eventuellt nollställe. Termen $\zeta(s + 2it)$ kan bli $0$, men då den aldrig kan bli en 
+singularitet kan den inte ta ut ett eventuellt nollställe.\\
+
+\newcommand*{\ps}{1 - p^{-s}}
+\paragraph{Sats 7:} $\zeta(s)$ har inga nollställen för $\mRe{s} = 1$. \\
+\\
+{\bf Bevis:}\\
+Vi använder oss av ett uttryck från Sats 1:
+\[
+	\zeta(s) = \prod_p \frac 1 {1 - p^{-s}}
+\]
+\[
+	\ln (\frac 1 {
+		1 - p^{-s}
+	})
+	= \ln(1) - \ln(1 - p^{-s}) = -\ln(1 - p^{-s})
+\]
+\[
+	\ln \left |
+		\zeta(s)
+	\right | = \ln \left |
+		\prod_p \frac 1 {1 - p^{-s}}
+	\right |
+	= \sum_p \ln \left | 
+		\frac 1 {1 - p^{-s}} 
+	\right |
+	= - \sum_p \ln \left |
+		1 - p^{-s}
+		\right | = - \mRe{\sum_p \ln(\ps)
+\] 
+Sats 5 ger nu:
+\[
+	-\mRe{\sum_p \ln(\ps)} 
+	= (\sum_p \sum_{n = 1}^\infty(
+		\frac {p^{-ns}} n
+	)}
+\]
+Vi definierar nu $h(x) = \zeta(x)^3 \cdot \zeta(x + it)^4 \cdot \zeta(x + 2it)$, logaritmlagarna ger nu:
+\begin{align*}
+	\ln(h(x)) &= 3 \ln \left | \zeta(x) \right | + 4 \ln \left | \zeta(x + it) \right | + \ln \left | \zeta(x + 2it) \right |\\  
+			 &= \sum_p \sum_{n = 1}^\infty \frac 1 n \cdot p^{nx} \cdot \mRe{3 + 4p^{-int} + p^{-int \cdot 2}} 
+\end{align*}
+eftersom:
+\[
+	\frac 1 n \cdot p^{-nx} \ge 0
+\]
+följer det att det vi måste undersöka är om \\
+\[
+	\operatorname{Re}(3 + 4p^{-int} + p^{-2int}) \ge 0
+\]
+\\
+\[
+	p^{-int} = e^{\ln(p) \cdot -int}
+\]
+\[
+	\theta = -\ln(p) \cdot n \cdot t \Rightarrow
+	e^{i\theta} \Rightarrow
+	\operatorname{Re}(3 + 4 \cdot e^{i\theta} + e^{i2\theta})
+\]
+Eulers formel ger nu:
+\[
+	\operatorname{Re}(3 + 4e^{i\theta} + e^{2i\theta})
+		= 3 + 4\cos(\theta) + \cos(2\theta)
+\]
+likheten $\cos(2\theta) = 2\cos^2(\theta) - 1$ ger:
+\[
+	3 + 4 \cos(\theta) + 2 \cos^2(\theta) - 1 
+		= 2(1 + 2\cos(\theta) + \cos^2(\theta)) 
+		= 2(1 + \cos(\theta))^2 \ge 0
+\]
+alla termer i vår summa är alltså större eller lika med 0. Då exempelvis\\
+$\theta = -\ln(2) \cdot 2$ ger en term $ > 0$ innebär detta att summan är strikt större än 0.\\
+%w00t? nej om $f(x) = \sum_0^\infty g(x), g(x) \ge 0 är f(x) också \ge 0$
+Det finns alltså inga nollställen för $\zeta(s)$ med $\mRe{s} = 1$.\\
+\hfill \qed
+
+\paragraph{Sats 8:} Det finns inga nollställen för $\zeta(s)$ med $\mRe{s} = 0.$\\
+\\
+{\bf Bevis:}\\
+Sats 2 och 3 visar att om $\zeta(s)$ är ett nollställe är $\zeta(1 - s)$ också det.
+Om det finns något $\zeta(0 + it) = 0$ följer även att $\zeta(1 - (0 + it)) = \zeta(1 - it) = 0$. Men detta 
+motbevisades i Sats 7.\\
+Notera att Sats 2 inte fungerar i punkterna $s = 1$ och $s = 0$. Med då $\zeta(0) = -\frac 1 2$ och 
+$\zeta(1) = \infty$ håller Satsen.
+\hfill \qed
+\pagebreak
+\section*{Del 2}
+\paragraph{Sats 9:} Om $\zeta(s) = 0$ för något tal $s = \frac 1 2 + it$ med $t \in \mathbb{R}$ är $\zeta(\overline{s}) = 0$ \\
+\\
+{\bf Bevis:}\\
+Det har tidigare visats att om $\zeta(s) = 0$ är $\zeta(1 - s) = 0$. $\zeta(\frac 1 2 + it) = 0 \Leftrightarrow 
+\zeta(1 - (\frac 1 2 + it)) = \zeta(\frac 1 2 - it) = 0$
+\hfill \qed
+
+\paragraph{Definition: Mellintransform} $\{\mathcal{M}f\}(s) = \varphi(s) = \int_0^\infty x^{s - 1} \cdot f(x) \; dx $ \\
+\\
+Mellintransformen har inversionsformen
+\[
+	f(x) = \frac {1} {2 \pi i} \cdot \smartint{C}{i \infty}
+		x^{-s} \cdot \varphi(s) \; ds
+ \]
+
+\paragraph{Sats 10:} 
+\[
+	\{\mathcal{M} \omega \} (x) = \zeta(2s) \cdot \Gamma(s) \cdot \pi^{-s}
+\]
+med 
+\[
+	\omega(y) = \sum\limits_{n \leq 1} e^{-n^2\pi y}
+\]
+\\
+{\bf Bevis:} \\ 
+Denna likhet härleddes i Sats 3, men då utan beteckningen Mellintransform.\\
+\\
+\paragraph{Sats 11:} 
+\[
+	\omega(y) = \frac {1} {2\pi i} \smartint{C}{i \infty} \zeta(zs) \cdot \Gamma(s) \cdot \pi^{-s} \cdot
+		y^{-s} \; ds \text{ för } c > \frac 1 2
+\] 
+\\
+{\bf Bevis:}\\
+Detta följer av att applicera Mellintransformens inversionsformel på Sats 10.\\
+
+\paragraph{Definition:} $\Xi(t) = \zeta(\frac 1 2 + it)$ \\
+\\
+\newcommand{\helper}[1] {
+	\int_#1^\infty (t^2 + \frac 1 4)^{-1}
+}
+\newcommand{\twelve}[1][0] {
+	\helper{#1} \cdot \cos(xt) \; dt
+}
+\paragraph{Sats 12:} 
+\[
+	\twelve = \frac 1 2 \pi(e^{\frac 1 2 x} -
+		2e^{-\frac 1 2 x} \omega(e^{- 2 x}))
+\]
+{\bf Bevis:}\\
+\[
+	\text{Sätt } Q(x) = \twelve
+\]
+Då $(t^2 + \frac 1 4) \cdot \Xi(t) \cdot \cos(xt)$ är symmetrisk kring $t = 0$ (se Sats 9 för $\Xi(t)$'s symmetri)
+så gäller:
+\newcommand{\mQ} {
+	\frac 1 2 \twelve{\infty}
+}
+\[
+	Q(x) = \mQ \quad (1)
+\]
+Då $\sin(xt)$ är ``inverst symmetrisk'' kring $t = 0$ följer det att 
+\[
+	\mQ = 0 \quad (2)
+\]
+Addition av $(1)$ och $(2)$ tillsammans med Eulers formel ger nu: 
+\[
+	Q(x) = \frac 1 2 \cdot \helper{-\infty} \Xi(t)\cdot e^{ixt} \; dt
+\]
+låt $s = \frac 1 2 + it$. Då följer:
+\[
+	Q(x) = \frac {
+		e^{- \tfrac 1 2 x t}
+	} {
+		2i
+	} \cdot \smartint{\tfrac 1 2}{\infty}
+		\frac {1} {s(1-s)} \Xi(s) \cdot e^{xs} \; ds
+\]
+Definitionen av $\zeta(s)$ ger nu:
+\[
+	Q(x) = - \frac {
+		e^{- \frac 1 2 xt}
+	} {
+		4i
+	} \cdot \smartint{\tfrac 1 2}{\infty} \zeta(s) \cdot \Gamma
+		\pi^{- \frac s 2} \cdot e^{xs} \; ds
+\]
+$z(s) \cdot \Gamma(\frac s 2) \pi^{- \frac s 0} \cdot e^{xs}$ har singulariteter i $s = 0$ och $s = 1$.
+Därmed följer det att om vi flyttar linjeintegralen till höger om linjen $c=1$ så korrigeras förändringen med att 
+subtrahera residualen i $s = 1$ så för $c > 1$ gäller:
+\[
+	Q(x) = - \frac {e^{- \frac 1 2 xt}} {4i} \cdot \int_{\tfrac 1 2 - \infty}^{\tfrac 1 2 + \infty} \zeta(s) \cdot \Gamma
+		\pi^{- \frac s 2} \cdot e^{xs} \; ds + \frac {e^{- \frac 1 2 xt}} {4i} \cdot2 \pi i \cdot \operatorname{Res}(\zeta(s) \cdot
+		\Gamma(\frac s 2) \cdot \pi^{-\frac s 2} \cdot e^{xs}, 1)
+\]
+Då $\operatorname{Res}(\zeta(s), 1) = 1$ (se Appendix Sats 14) följer det att:
+\[
+	\frac {e^{- \frac 1 2 x}} {4i} \cdot 2 \pi i \cdot 1 \cdot \Gamma(\frac 1 2) \cdot \pi^{- \frac 1 2} \cdot e^x =
+		\frac {e^{\frac 1 2 x}} {2} \cdot \pi \cdot 1 \cdot \sqrt{x} \cdot \frac {1} {\sqrt{x}} = \frac {e^{\frac {1 2} x} \pi} {2}
+\]
+Därmed följer:
+\[
+	Q(x) = - \frac {e^{-\frac 1 2 x}} {4 i} \cdot \int_{C - \infty}^{C + \infty} \zeta(s) \cdot \Gamma(\frac s 2)
+		\cdot \pi^{- \frac 1 2} \cdot e^{xs} \; ds + \frac \pi 2 \cdot e^{\frac 1 2 x}
+\]
+genom att sätta $y = e^{-2x}$ erhålls det från Sats 11 att:
+\[
+	Q(x) = - \pi e^{- \frac 1 2 x} \cdot \omega(e^{- 2 x}) + \frac \pi 2 e^{\frac 1 2 x} = \frac 1 2 \pi
+		(e^{\frac 1 2 x} - 2 e^{- \frac 1 2 x} \cdot \omega(e^{-2x}))
+\]
+\hfill \qed
+
+\paragraph{Sats 13:} För alla heltal $n$ gäller:
+\[%vad är det här?
+	\lim_{a \to \frac n 4 \pi^+} \frac {
+		d^{2n} [
+			e^{\frac 1 2 ia} (\frac 1 2 + \omega(e^{2ia}))
+		]}
+		{
+			da^{2n}
+		} = 0
+\]
+\\
+{\bf Bevis:}\\
+Observera att:
+\newcommand{\mysum} {
+	\sum_{n = 1}^\infty e^{-n^2 v \pi} \cdot
+}
+\begin{align*}
+	\omega(i + v) &= \sum_{n = 1}^\infty e^{-n^2 \pi(i + v)} \\
+		&= \mysum e^{-\pi i n^2} \\
+		&= \mysum (- 1)^{n^2} \\
+		&= \mysum (- 1)^n
+\end{align*}
+Det sista steget gäller då udda $n$ ger udda $n^2$ och jämna $n$ ger jämna $n^2$.
+\[
+	2 \omega(4v) - \omega(v) = \sum_{n = 1}^\infty 2 e^{-n^2 \pi 4 v} - e^{-n^2 \pi v} = \sum_{n = 1}^\infty 2
+		e^{-(2n)^2\pi v} - e^{-n^2 \pi v} 
+\]
+\[
+	= \sum_{n = 1}^\infty (-1)^n \cdot e^{-n^2 vt} = \omega(i + v) = 2 \omega(4 v) -
+			\omega(v) \qquad (1)
+\]
+\[
+	\omega(x) x^{- \frac 1 2} \cdot \omega(\frac 1 x) + \frac 1 2  x^{- \frac 1 2} - \frac 1 2 \text{ (Se Sats 3 för härledning)}
+\]
+Vilket ger att $(1)$ blir:
+\[
+	\omega(i + v) = \frac {1} {\sqrt v} \cdot \omega(\frac {1} {4v}) - \frac {1} {\sqrt v} \cdot \omega(\frac 1 v) - \frac 1 2
+		\qquad (2)
+\]
+Om man nu skriver ut summorna ser man att $\omega(i + v) + \frac 1 2$ och alla dess derivator går
+mot $0$ då $v \to 0$ för $v \in \mathbb{R}^+$
+vilket även innebär att de går mot $0$ längs all vinklar $|\operatorname{arg}(z)| < \frac 1 2 \pi$ då vi för något $v$ med 
+$\mRe{v} > 0$ har att:
+\[
+	\left |
+		 \sum_{n = 1}^\infty e^{-\pi n^2 \frac 1 v} 
+	\right | \leq 
+		\sum_{n = 1}^\infty e^{-\pi n^2 \frac {\mRe{v}} {|v^2|}}
+	\leq
+		\sum_{n = 1}^\infty e^{-\pi n^2 \frac {1} {|v|}}.
+\]
+Då $a \to \frac {\pi^+} {4}$ antyder att $e^{2ia} \to i$ längs alla ``vägar''
+med $|\operatorname{arg}(e^{2ia} - i) | < \frac 1 2 \pi$, så bevisar detta Satsen\\
+\hfill \qed
+\paragraph{Sats 14:} Riemanns Zeta-funktion har oändligt många nollställen längst linjen $\frac 1 2 + it$ \\
+\\
+{\bf Bevis:} \\
+Genom att substituera $x = -ia$ i Sats 12
+så erhålls uttrycket:
+\[
+	\int_0^\infty (t^2 + \frac 1 4)^{-1} \Xi(t) \cdot \cosh(at) \; dt = \frac \pi 2 (e^{- \frac 1 2 ia} - 2 e^{\frac 1 2 ia}
+		\cdot \omega(e^{2ia}))
+\]
+\[
+	= \pi \cos(\frac a 2) - \pi e^{\frac 1 2 ia} (\frac 1 2 + \omega(e^{2 ia})) \qquad (1)
+\]
+\[
+	\text{där } \cosh(at) = \frac 1 2 (e^{-at} + e^{at})
+\]
+om man nu deriverar $(1)$ $2n$ antal gånger med avseende på a får man:
+\[
+	\int_0^\infty (t^2 + \frac 1 4)^{-1} \cdot t^{2n} \cdot \Xi(t) \cdot \cosh(at) \; dt = \frac {\pi(-1)^n}{2^{2n}}
+		\cos(\frac a 2) - \frac {\pi d^{2n}} {da^{2n}} \left [
+			e^{\frac 1 2 ia} (\frac 1 2 + \omega(e^{2ia}))
+		\right ]
+\]
+(deriveringen sker ett jämnt antal gånger för att få en ``regelbunden'' derivata)
+$a$ får nu gå mot $\frac 1 4 \pi^+$.
+Sats 13 innebär nu att den sista tremen i det högra ledet $\to 0$, vilket ger:
+\[
+	\lim_{a \to \frac 1 4 \pi^+} \int_0^\infty (t^2 + \frac 1 4)^{-1} \cdot t^{2n}\Xi(t) \cdot \cosh(at) \; dt = 
+		\frac {\pi (-1)^n} {2^{2n}} \cos(\frac 8 \pi). \qquad (2)
+\]
+%Detta innebär att det vänstra ledet växlar tecken oändligt många gånger. Då vänstra ledet är kontinuerligt
+%längs linjen $\frac 1 2 + it$ innebär detta att det även blir lika med $0$ oändligt många gånger.
+%Och då ingen av de andra faktorerna blir $0$ oändligt många gånger betyder detta att $\Xi(t)$ har oändligt många nollställen.\\
+Om satsen är fel skulle det innebäre att $\Xi(t)$ har ändligt många nollställen vilket innebär att $\Xi(t)$ aldrig ändrar
+tecken för $t > T$ för något stort $T$. Antag nu att $\Xi(t) > 0$ ($\Xi(t) < 0$ hanteras på samma sätt). låt $L$ Definieras som:
+\newcommand{\skit} {
+	\Xi(t)
+}
+
+\newcommand{\thisint} {
+	(t^2 + \frac 1 4)^{-1} \skit\cosh
+}
+\[
+	\lim_{a \to \frac {\pi^+} {4}} \int_0^\infty \thisint(at) \ud t = L
+\]
+Då $\cosh$ ökar monotont i $[0, \infty]$ antyder det för $T' > T$ att:
+\[
+	\int_T^{T'}\thisint(at) \ud t \leq L
+\]
+\[
+	\int_0^\infty\thisint(\frac 1 4 \pi t) \ud t
+\]
+\newcommand{\myeq}[1]{
+	(t^2 + \frac 1 4)^{-1}t^{2n}\skit\cos(#1)
+}
+absolut konvergent. Då $\myeq{\frac \pi 4 t}$ är större än $\myeq{at}$ För alla $a \in [0, \frac \pi 4]$ (Då $\cosh$ växer monotont), låter
+Dominerande konvergenssatsen oss att byta plats på gränsvärdet och integralen $(2)$ ger nu att vi för varje $n$ har:
+\[
+	\int_0^\infty \thisint(\frac \pi 4 t) \ud t = \frac {\pi (-1)^n} {2^{2n}} \cdot \cos(\frac \pi 8)
+\]
+Det är dock omöjligt då högerledet växlar tecken oändligt ofta. Låt $n$ vara udda,
+högerledet är då strikt mindre än $0$ och vi har då:
+\newcommand{\thislaser}[2]{
+	\int_{#1}^{#2}\thisint(\frac \pi 4 t) \ud t
+}
+\[
+	\thislaser{0}{\infty} < 0
+\]
+\[
+	\thislaser{T}{\infty} < -\thislaser{0}{T}
+\]
+Då $T$ är fixt är:
+\[
+	\lvert \thislaser{0}{T} \leq T^{2n} \thislaser 0 T
+\]
+sätt
+\[
+	-\thislaser 0 T \leq RT^{2n}
+\]
+där $R$ är oberoende av $n$. Man kan nu anta att det finns ett $K > 0$ så att
+$\skit(t^2 + \frac 1 4)^{-1} > K$ för alla $2T < t < (2T + 1)$ så att:
+\[
+	\thislaser T \infty \geq \int_{2T}^{2T + 1} t^{2n} K \ud t \geq K \cdot (2T)^{2n}
+\]
+Därmed är
+\[
+	K(2T)^{2n} < RT^{2n}
+\]
+för alla $n$, vilket är ekvivalent med:
+\[
+	2^{2n} < \frac R K
+\]
+vilket är omöjligt då $\frac R K$ är oberoende
+av $n$ och $n$ kan väljas godtyckligt stort.
+Vi har därmed en modsägelse, Satsen är bevisad.\\
+\hfill\qed
+\include{appendix}
