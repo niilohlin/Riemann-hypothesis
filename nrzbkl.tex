@@ -20,9 +20,29 @@ Zeta-funktionens icke-triviala nollställen till en ``remsa'' i det komplexa tal
 I den andra delen studeras nollställena längs den ``kritiska linjen'' $(\frac 1 2 + it,\quad t \in \mathbb{R})$.
 Det finns även ett appendix i vilket vissa, inte helt uppenbara satser som används i arbetet, härleds.
 
+\newcommand{\mres}{
+	\mRe{s}
+}
+
+\newcommand{\zfn}{
+	zeta-funktionen
+}
+
 \section*{Del 1}
+I denna del kommer det först att bevisas att zeta-funktionen inte har några nollställen för $\mres > 1$.
+Därefter påvisas en funktion som har samma nollställen som zeta-funktionen, och sem därefter bevisas
+vara invariant från $s \to (1 - s)$. Av denna invarians följer det att zeta-funktionen omöjligt kan 
+ha några icke-triviala nollställen för $\mres < 0$. Därefter visas en funktion som på linjen $1 + it$, har
+samma nollställen som \zfn. Därefter visas det att denna funktion inte har något nollställe för något värde
+på $t$, vilket har som följd att \zfn inte har några nollställen på linjen $\mres = 1$ Därefter följer det 
+av den sedan tidigare påvisade invariansen att \zfn inte hellar har några nollställen på linjen $\mres = 0$.
+Sammanfattningsvis har alltså \zfn{}s nollställen begränsats till remsan $0 < \mres < 1$.\\
+\\
 \paragraph{Sats 1:}
-Det finns inga nollställen till Riemanns zeta-funktion med Realdelen $> 1$.\\
+%Det finns inga nollställen till Riemanns zeta-funktion med Realdelen $> 1$.\\
+Då $s = a+ bi$ ger att $1-p^{-s} = 1 - e^{-\ln(a) \cdot s} \cdot e^{-ln(b)si}$, vilket för $a > 1$ har
+absolutbelopp $\leq 1$ följer det att produkten inte har några singulariteter och att zeta-fgunktionen
+därför aldrig blir lika med 0 för $\mRe{s} > 1$
 \\
 {\bf Bevis:} \\
 För $s$ med $\mRe{s} > 1$ definieras Riemanns zeta-funktion som 
@@ -282,7 +302,17 @@ Notera att Sats 2 inte fungerar i punkterna $s = 1$ och $s = 0$. Med då $\zeta(
 $\zeta(1) = \infty$ håller Satsen.
 \hfill \qed
 \pagebreak
+\newcommand{\zit}{
+	$\zeta(\frac 1 2 + it)$
+}
 \section*{Del 2}
+I denna del så utgår man från ett uttryck av 2 variabler som bland annat innehåller \zit, som
+därefter, genom flera hjälpsatser, skrivs om till ett annat uttryck. Detta uttryck f»rändras i sin tur
+genom derivering med avseende på en av variablerna. Genam ett motsägelsebevis visas det därefter
+slutligen att denna derivata omöjligt kan sluta växla tecken för $t > T$ för något stort $T$. Då den enda
+funktionen i uttrycket som motentiellt sett kan växla tecken oändligt många gånger är \zit 
+följer det därav att \zfn har oändligt många nollställen på den kritiska linjen.\\
+\\
 \paragraph{Sats 9:} Om $\zeta(s) = 0$ för något tal $s = \frac 1 2 + it$ med $t \in \mathbb{R}$ är $\zeta(\overline{s}) = 0$ \\
 \\
 {\bf Bevis:}\\
