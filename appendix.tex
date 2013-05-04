@@ -32,6 +32,7 @@ Fouriertransformen av en funktion f(t) definieras som:
 	\mathcal{F}(u) = \frac 1 {2\pi} \cdot
 	\int_{-\infty}^\infty f(t) \cdot e^{- i \cdot u \cdot t} \; dt
 \]
+\pagebreak
 \paragraph{Sats 1:} 
 $\sum\limits_{n \in \mathbb{Z}} f(n) = \sum\limits_{n \in \mathbb{Z}} \hat{f}(m)$ där $\hat{f}(m)$ är Fouriertransformen till $f(n)$.
 \\
@@ -120,7 +121,7 @@ $$\frac {d u} {d x} = \frac {d v} {d y}, \frac {d u} {d y} = -
 	\frac {d v} {d x}$$
 \hfill \qed
 
-\paragraph{Definition 1: Klass $C_1$}
+\paragraph{Definition: Klass $C_1$}
 Låt $f$ vara definierad i en mängd $D$. Vi säger att $f$ är av klass $C_1$ om $f$ är partiellt deriverbar och
 alla de partiella derivatorna är kontinuerliga i $D$.\\
 \\
@@ -137,7 +138,6 @@ Och att det finns en motsvarande uppdelning för x-axeln
 %bild!!!!
 \begin{center}
 	\includegraphics[scale=0.5]{linus_0001.jpg}
-	{\it Figur 1}
 \end{center}
 Inledningsvis visas det att:
 $$\int_{\partial E} P \; dx = \iint_E - \frac {dP} {dy} \; dx \; dy$$
@@ -162,7 +162,7 @@ $$\int_{\partial D} Q \; dy = \iint_D \frac {dQ} {dx} \; dy dx.$$
 genom att addera uttrycken följer nu att:
 $$\iint_D \left ( \frac {dQ} {dx} - \frac {dP} {dy} \right ) \; dx dy = \int_{\partial D} P \; dx + Q \; dy.$$
 \hfill \qed
-\paragraph{Definition 2:} En funktion $f$ är analytisk i ett område $D$ om den har en derivata i alla punkter i $D$.\\
+\paragraph{Definition:} En funktion $f$ är analytisk i ett område $D$ om den har en derivata i alla punkter i $D$.\\
 \\
 \paragraph{Sats 4:} Om $\Gamma$ är en sluten kurva i det komplexa talplanet och $f(z)$ är analytisk i området som innesluts av $\Gamma$ så är:
 $$\int_{\Gamma} f(z) \; dz = 0.$$
@@ -192,6 +192,22 @@ $$\int_\Gamma f(z) \; dz = 0$$
 $\frac {f(z)} {z - z_0}$ är analytisk överallt i området som innesluts av $\Gamma$ förutom i punkten
 $z = z_0$. Vi kan därför deformera $\Gamma$ till en cirkel $C_r$ med radien $r$ och 
 som är centrerad kring $z_0$.
+\begin{center}
+	\includegraphics[scale=0.35]{linusbildp101.jpg}\\
+	{\it man kan dela upp den slutna kurvan $\Gamma$ i två kurvor, en som går moturs från $p$ till $q$,
+		och en som går moturs från $q$ till $p$. Betrakta därefter kurvan från $p$ till $q$ som rör sig
+		in mot $z_0$ och därefter rör sig i en halvcirkel under $z_0$ och som därefter rör sig mot $q$ 
+		längs en rät linje. Som en följd av Sats 4 gäller att integralen längs alla kurvor med samma 
+		start och slutpunkt är lika. Alltså är integralen längs den ovan beskrivna kurvan och integralen
+		längs delkurvan till $\Gamma$ från $p$ till $q$ lika. Man kan skapa en liknande kurva som rör sig
+		i en halvcirkel ovanför $z_0$ vars integral är lika med integralen längs delkurvan till $\Gamma$
+		som rör sig från $q$ till $p$. Summan av integralen längs delkurvorna till $\Gamma$ blir lika med
+		integralen längs $\Gamma$. Men denna integral blir även lika med summan av integralerna längs
+		de ovan beskrivna kurvorna. Men då integralen längs de båda linjesegmenten tar ut varandra, 
+		gäller det att integralen längs $\Gamma$ är lika med integralen längs en cirkel med radien $r$,
+	$C_r$, med centrum i $z_0$. Alltså:}
+
+\end{center}
 
 \[ \int_\Gamma \frac {f(z)} {z - z_0} \; dz = \int_{C_r} \frac {f(z)} {z - z_0} \; dz. \]
 
@@ -249,7 +265,7 @@ Detta inses genom att derivera uttrycket med avseende på $z_0$.
 	f^{(n)}(z_0) &= \frac {1} {2 \pi i} \cdot n! \cdot \int_\Gamma f(z) \cdot (z \ z_0)^{-(n + 1)} \; dz
 \end{align*} %jag fattade inget av Sats 5, jag tror att det är fel
 \hfill \qed
-\\
+\pagebreak
 \paragraph{Sats 7:}
 \[
 	f(z) = \sum_{j = - \infty}^\infty a_j (z - z_0)^j. \text{ med } a_j = \frac {1} {2 \pi i} \cdot \ointctrclockwise
@@ -263,7 +279,6 @@ Låt därefter $\Gamma$ se ut som en ``donut'' med en ``bit'' borta.
 %biiild
 \begin{center}
 	\includegraphics[scale=0.5]{aoeu.jpg}
-	{\it Figur 2}
 \end{center}
 Låt $\Gamma'$ vara den ``borttagna biten''. då $f(z)$ är analytisk i hela området som innesluts av $\Gamma'$ ger Sats 3 att.
 \[
@@ -366,7 +381,7 @@ Men om $f(z)$ har en singularitet i punkten $z = z_0$ gäller:
 \end{align*}
 \hfill \qed
 \\
-\paragraph{Sats 10:} %kanske ska ändra till "implicerar"
+\paragraph{Hjälpsats 10:} %kanske ska ändra till "implicerar"
 Om $A_n = \sum\limits_{i = 0}^n a_1, \quad \text{ då är } \sum\limits_{i = 0}^n a_i \cdot b_i = 
 		\sum\limits_{i = 0}^{n - 1} A_i (b_i - b_{i + 1}) + A_n \cdot b_n$\\
 {\bf Bevis:}\\
@@ -386,7 +401,7 @@ vi har nu
 		\sum_{k = 0}^{n - 1} A_k (b_k - b_{k + 1}) + A_n \cdot b_n
 \]
 \\
-\paragraph{Sats 11:} $(n^{-s} - (n + 1)^{-s}) = s \cdot \int\limits_n^{n + 1} x^{-s - 1} \; dx$\\
+\paragraph{Hjälpsats 11:} $(n^{-s} - (n + 1)^{-s}) = s \cdot \int\limits_n^{n + 1} x^{-s - 1} \; dx$\\
 {\bf Bevis:}\\
 \[
 	s \cdot \int_n^{n + 1} x^{-s - 1} \; dx = - [ x^{-s} ]_n^{n + 1} = - ((n + 1)^{-s} - n^{-s})
@@ -394,17 +409,17 @@ vi har nu
 \]
 \hfill \qed
 \\
-\paragraph{Definition 3:} $\floor{x} = \text{ heltalsdelen av } x$\\
+\paragraph{Definition:} $\floor{x} = \text{ heltalsdelen av } x$\\
 \\
 exempel:\\
 $\floor{\pi} = 3, \quad \floor{e} = 2, \quad \floor{38.5} = 38$\\
 \\
-\paragraph{Definition 4:} $\fpart{x} = x - \floor{x}$\\
+\paragraph{Definition:} $\fpart{x} = x - \floor{x}$\\
 \\
 exempel:\\
 $\fpart{\pi} = 0.14159265358979 \ldots, \quad \fpart{e} = 0.72182818284590 \ldots, \fpart{38.5} = 0.5$\\
 \\
-\paragraph{Sats 12:} $\frac {s} {s - 1} - s \cdot \int\limits_1^\infty \floor{x} x^{-s - 1} \; dx +
+\paragraph{Hjälpsats 12:} $\frac {s} {s - 1} - s \cdot \int\limits_1^\infty \floor{x} x^{-s - 1} \; dx +
 		s \cdot \int\limits_1^\infty \fpart{x} x^{-s - 1} \; dx$ \\
 {\bf Bevis:}\\
 \[
@@ -424,16 +439,16 @@ $\fpart{\pi} = 0.14159265358979 \ldots, \quad \fpart{e} = 0.72182818284590 \ldot
 \[
 	\zeta(s) = \sum_{n \leq n} \frac {1} {n^{-s}}
 \]
-Sats 10 ger:
+Hjälpsats 10 ger:
 \[
 	\sum_{n \leq 1} \frac {1} {n^{-s}} = \sum_{n \leq 1} n \cdot (n^{-s} - (n + 1)^{-s})
 \]
-Sats 11 ger nu att:
+Hjälpsats 11 ger nu att:
 \[
 	s \sum_{n \leq 1} n (n^{-s} - (n + 1)^{-s}) = s \sum_{n \leq 1} \int_n^{n + 1} \floor{x} x^{-s -1} \; dx =
 		s \int_1^\infty \floor{x} x^{-s - 1} \; dx
 \]
-Sats 12 ger slutligen att:
+Hjälpsats 12 ger slutligen att:
 \[
 	\int_1^\infty \floor{x} x^{-s - 1} \; dx = \frac {s} {s - 1} - s \int_1^\infty \fpart{x} x^{-s - 1} \; dx = \zeta(s)
 \]
@@ -444,7 +459,7 @@ Sats 12 ger slutligen att:
 {\bf Bevis:}\\
 Sats 9 visar att residualen $= \lim_{z - z_0} f(z)(z - z_0)$
 \[
-	\zeta(s) - (s - 1) = \left (
+	\zeta(s) \cdot (s - 1) = \left (
 		\frac {s} {s - 1} - s \cdot \int_1^\infty \fpart{x} x^{-s - 1} \; dx 
 		\right )
 	(s - 1)
@@ -455,7 +470,7 @@ Sats 9 visar att residualen $= \lim_{z - z_0} f(z)(z - z_0)$
 \]
 \hfill \qed
 \pagebreak
-\section*{Referenser}
+\section*{Källor:}
 Arne Persson \& Lars-Christer Böiers, (2005), Analys i Flera Variabler. Lunds Studentlitteratur AB.\\
 \\
 E. B Saff \& A. D. Snider, (1993), Fundamentals of Complex Analysis for Mathematics, Science, And Engineering,

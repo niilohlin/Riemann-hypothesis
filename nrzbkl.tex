@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside]{article}%[fleqn] kan vara snyggt
+\documentclass[a4paper]{article}%[fleqn] kan vara snyggt
 \usepackage{custom}
 
 \begin{document}
@@ -11,7 +11,7 @@
 \section*{Introduktion}
 Riemannhypotesen beskrevs för första gången 1859 av Bernhard Riemann och lyder:
 Alla icke-triviala nollställen till Riemanns Zeta-funktion har Realdelen $\frac 1 2$.
-För \smash{$\mRe{s} \geq 1$} definieras Riemanns Zeta-funktion som $\sum\limits_{n = 1}^\infty \frac 1 {n^s}$. 
+För \smash{$\mRe{s} > 1$} definieras Riemanns Zeta-funktion som $\sum\limits_{n = 1}^\infty \frac 1 {n^s}$. 
 För att kunna studera dess nollställen i det komplexa talplanet måste man alltså först hitta
 ett sätt att beskriva Zeta-funktionen på som gäller för alla $s$ i $C$. 
 Arbetet är i huvudsak uppdelat i 2 delar och ett Appendix. I den första delen begränsas 
@@ -30,19 +30,16 @@ Det finns även ett appendix i vilket vissa, inte helt uppenbara satser som anv�
 
 \section*{Del 1}
 I denna del kommer det först att bevisas att zeta-funktionen inte har några nollställen för $\mres > 1$.
-Därefter påvisas en funktion som har samma nollställen som zeta-funktionen, och sem därefter bevisas
+Därefter påvisas en funktion som har samma nollställen som zeta-funktionen, och som därefter bevisas
 vara invariant från $s \to (1 - s)$. Av denna invarians följer det att zeta-funktionen omöjligt kan 
 ha några icke-triviala nollställen för $\mres < 0$. Därefter visas en funktion som på linjen $1 + it$, har
 samma nollställen som \zfn. Därefter visas det att denna funktion inte har något nollställe för något värde
 på $t$, vilket har som följd att \zfn inte har några nollställen på linjen $\mres = 1$ Därefter följer det 
-av den sedan tidigare påvisade invariansen att \zfn inte hellar har några nollställen på linjen $\mres = 0$.
-Sammanfattningsvis har alltså \zfn{}s nollställen begränsats till remsan $0 < \mres < 1$.\\
+av den sedan tidigare påvisade invariansen att \zfn inte heller har några nollställen på linjen $\mres = 0$.
+Sammanfattningsvis har alltså zeta-funktionens nollställen begränsats till remsan $0 < \mres < 1$.\\
 \\
 \paragraph{Sats 1:}
-%Det finns inga nollställen till Riemanns zeta-funktion med Realdelen $> 1$.\\
-Då $s = a+ bi$ ger att $1-p^{-s} = 1 - e^{-\ln(a) \cdot s} \cdot e^{-ln(b)si}$, vilket för $a > 1$ har
-absolutbelopp $\leq 1$ följer det att produkten inte har några singulariteter och att zeta-fgunktionen
-därför aldrig blir lika med 0 för $\mRe{s} > 1$
+Det finns inga nollställen till Riemanns zeta-funktion med Realdelen $> 1$.\\
 \\
 {\bf Bevis:} \\
 För $s$ med $\mRe{s} > 1$ definieras Riemanns zeta-funktion som 
@@ -69,8 +66,9 @@ Om man gör så med alla primtal får man:
 		&\frac {\zeta(s)} {\displaystyle\prod_p \frac 1 {(1 - p^{-s})}} = 1 = \zeta(s) \cdot \prod_p (1 - p^{-s}) \\
 	\end{aligned}
 \end{equation}
-\\
-Vilket visar att $\zeta(s) \ne 0 \text{ För } \mRe{s} > 1$
+Då $s = a+ bi$ ger att $1-p^{-s} = 1 - e^{-\ln(p) \cdot a} \cdot e^{-ln(p) \cdot bi}$, vilket för $a > 1$ har
+absolutbelopp $\leq 1$ följer det att produkten inte har några singulariteter. 
+Vilket visar att $\zeta(s) \ne 0 \text{ För } \mRe{s} > 1$\\
 
 \paragraph{Definition:}
 Den kompletta zeta-funktionen.\\
@@ -166,11 +164,11 @@ Och hela ekvationen blir då:
 Om vi byter ut $s$ mot $(1 - s)$ i det högra uttrycket erhåller vi samma uttryck igen. Därför gäller det att $\xi(s) = \xi(1 - s)$ \\
 \hfill \qed\\
 (Division med $\Gamma(\frac s 2 )$ i den sista likheten, innebär att zeta-funktionen har nollställen varje gång då $\Gamma(\frac s 2 )$ har en singularitet. På så sätt erhålls de ``triviala nollställena'')
-\\
+\pagebreak
 \paragraph{Sats 4:} De triviala nollställena till Riemanns zeta-funktion är de enda nollställena utanför intervallet $0 < \mRe{s} < 1$.\\
 \\
 {\bf Bevis:}\\ %Skrivas i obestämd form ex. I Sats 1 bevisades att \ldots?
-I Sats 1 bevisades det att $\zeta(s)$ inte har några nollställen för $\zeta(s)$ och i Sats 3 bevisade jag att $\xi(s) = \xi(1 - s)$.
+I Sats 1 bevisades det att $\zeta(s)$ inte har några nollställen för $\zeta(s)$ och i Sats 3 bevisades det att $\xi(s) = \xi(1 - s)$.
 Om vi antar att det finns en punkt p med $\mRe{p} < 0$ sådan att $\zeta(p) = 0$ innebär det av Sats 2 att $\xi(p) = 0 \Leftrightarrow
 \xi(1 - p) = 0 \Leftrightarrow \zeta(1 - p) = 0$ men om $\mRe{p} < 0$ är $\mRe{1 - p} > 1$. Då innebär det att det finns en punkt
 $q = 1 - p$ med $\mRe{q} > 1$ sådan att $\zeta(q) = 0$. Men detta strider mot Sats 1. Det kan alltså inte finnas en punkt $p$ med
@@ -179,9 +177,15 @@ $\mRe{p} < 0$ sådan att $\zeta(p) = 0$. \\
 %I slutet på andra meningen i stas 5 så ska det stå "med \operatorname{Re} > 1"
 %efter zetat. vilket zeta?
 
-\pagebreak
-
-\paragraph{Sats 5:} $\ln(1 - i) = - \sum\limits_{n = 1}^\infty \frac {x^n} n$ \\
+\paragraph{Sats 5:} $\zeta(s + it) = 0$ for $s = 1$ omm $\zeta(s)^3 \cdot \zeta(s + it)^4 \cdot \zeta(s + 2it) = 0$ \\
+för $s = 1$. \\
+\\
+{\bf Bevis:}\\
+$\zeta(s)$ har en singularitet för $s = 1$. Men eftersom faktorn $\zeta(s + it)^4$ är av högre grad kan singulariteterna
+för $\zeta(s)$ inte ta ut ett eventuellt nollställe. Termen $\zeta(s + 2it)$ kan bli $0$, men då den aldrig kan bli en 
+singularitet kan den inte ta ut ett eventuellt nollställe.\\
+\hfill\qed\\
+\paragraph{Hjälpsats 6:} $\ln(1 - i) = - \sum\limits_{n = 1}^\infty \frac {x^n} n$ \\
 \\
 {\bf Bevis:}\\
 \[
@@ -211,14 +215,6 @@ Derivering ger att
 \end{align*}
 \hfill \qed
 
-\paragraph{Sats 6:} $\zeta(s + it) = 0$ for $s = 1$ omm $\zeta(s)^3 \cdot \zeta(s + it)^4 \cdot \zeta(s + 2it) = 0$ \\
-för $s = 1$. \\
-\\
-{\bf Bevis:}\\
-$\zeta(s)$ har en singularitet för $s = 1$. Men eftersom faktorn $\zeta(s + it)^4$ är av högre grad kan singulariteterna
-för $\zeta(s)$ inte ta ut ett eventuellt nollställe. Termen $\zeta(s + 2it)$ kan bli $0$, men då den aldrig kan bli en 
-singularitet kan den inte ta ut ett eventuellt nollställe.\\
-
 \newcommand*{\ps}{1 - p^{-s}}
 \paragraph{Sats 7:} $\zeta(s)$ har inga nollställen för $\mRe{s} = 1$. \\
 \\
@@ -246,7 +242,7 @@ Vi använder oss av ett uttryck från Sats 1:
 		1 - p^{-s}
 		\right | = - \mRe{\sum_p \ln(\ps)
 \] 
-Sats 5 ger nu:
+Hjälpsats 6 ger nu:
 \[
 	-\mRe{\sum_p \ln(\ps)} 
 	= (\sum_p \sum_{n = 1}^\infty(
@@ -307,10 +303,10 @@ $\zeta(1) = \infty$ håller Satsen.
 }
 \section*{Del 2}
 I denna del så utgår man från ett uttryck av 2 variabler som bland annat innehåller \zit, som
-därefter, genom flera hjälpsatser, skrivs om till ett annat uttryck. Detta uttryck f»rändras i sin tur
-genom derivering med avseende på en av variablerna. Genam ett motsägelsebevis visas det därefter
+därefter, genom flera hjälpsatser, skrivs om till ett annat uttryck. Detta uttryck förändras i sin tur
+genom derivering med avseende på en av variablerna. Genom ett motsägelsebevis visas det därefter
 slutligen att denna derivata omöjligt kan sluta växla tecken för $t > T$ för något stort $T$. Då den enda
-funktionen i uttrycket som motentiellt sett kan växla tecken oändligt många gånger är \zit 
+funktionen i uttrycket som potentiellt sett kan växla tecken oändligt många gånger är \zit 
 följer det därav att \zfn har oändligt många nollställen på den kritiska linjen.\\
 \\
 \paragraph{Sats 9:} Om $\zeta(s) = 0$ för något tal $s = \frac 1 2 + it$ med $t \in \mathbb{R}$ är $\zeta(\overline{s}) = 0$ \\
@@ -328,7 +324,7 @@ Mellintransformen har inversionsformen
 		x^{-s} \cdot \varphi(s) \; ds
  \]
 
-\paragraph{Sats 10:} 
+\paragraph{Hjälpsats 10:} 
 \[
 	\{\mathcal{M} \omega \} (x) = \zeta(2s) \cdot \Gamma(s) \cdot \pi^{-s}
 \]
@@ -340,14 +336,14 @@ med
 {\bf Bevis:} \\ 
 Denna likhet härleddes i Sats 3, men då utan beteckningen Mellintransform.\\
 \\
-\paragraph{Sats 11:} 
+\paragraph{Hjälpsats 11:} 
 \[
 	\omega(y) = \frac {1} {2\pi i} \smartint{C}{i \infty} \zeta(zs) \cdot \Gamma(s) \cdot \pi^{-s} \cdot
 		y^{-s} \; ds \text{ för } c > \frac 1 2
 \] 
 \\
 {\bf Bevis:}\\
-Detta följer av att applicera Mellintransformens inversionsformel på Sats 10.\\
+Detta följer av att applicera Mellintransformens inversionsformel på Hjälpsats 10.\\
 
 \paragraph{Definition:} $\Xi(t) = \zeta(\frac 1 2 + it)$ \\
 \\
@@ -411,21 +407,21 @@ subtrahera residualen i $s = 1$ så för $c > 1$ gäller:
 Då $\operatorname{Res}(\zeta(s), 1) = 1$ (se Appendix Sats 14) följer det att:
 \[
 	\frac {e^{- \frac 1 2 x}} {4i} \cdot 2 \pi i \cdot 1 \cdot \Gamma(\frac 1 2) \cdot \pi^{- \frac 1 2} \cdot e^x =
-		\frac {e^{\frac 1 2 x}} {2} \cdot \pi \cdot 1 \cdot \sqrt{x} \cdot \frac {1} {\sqrt{x}} = \frac {e^{\frac {1 2} x} \pi} {2}
+		\frac {e^{\frac 1 2 x}} {2} \cdot \pi \cdot 1 \cdot \sqrt{x} \cdot \frac {1} {\sqrt{x}} = \frac {e^{\frac 1 2 x} \pi} {2}
 \]
 Därmed följer:
 \[
 	Q(x) = - \frac {e^{-\frac 1 2 x}} {4 i} \cdot \int_{C - \infty}^{C + \infty} \zeta(s) \cdot \Gamma(\frac s 2)
 		\cdot \pi^{- \frac 1 2} \cdot e^{xs} \; ds + \frac \pi 2 \cdot e^{\frac 1 2 x}
 \]
-genom att sätta $y = e^{-2x}$ erhålls det från Sats 11 att:
+genom att sätta $y = e^{-2x}$ erhålls det från Hjälpsats 11 att:
 \[
 	Q(x) = - \pi e^{- \frac 1 2 x} \cdot \omega(e^{- 2 x}) + \frac \pi 2 e^{\frac 1 2 x} = \frac 1 2 \pi
 		(e^{\frac 1 2 x} - 2 e^{- \frac 1 2 x} \cdot \omega(e^{-2x}))
 \]
 \hfill \qed
 
-\paragraph{Sats 13:} För alla heltal $n$ gäller:
+\paragraph{Hjälpsats 13:} För alla heltal $n$ gäller:
 \[%vad är det här?
 	\lim_{a \to \frac n 4 \pi^+} \frac {
 		d^{2n} [
@@ -479,6 +475,7 @@ $\mRe{v} > 0$ har att:
 Då $a \to \frac {\pi^+} {4}$ antyder att $e^{2ia} \to i$ längs alla ``vägar''
 med $|\operatorname{arg}(e^{2ia} - i) | < \frac 1 2 \pi$, så bevisar detta Satsen\\
 \hfill \qed
+\pagebreak
 \paragraph{Sats 14:} Riemanns Zeta-funktion har oändligt många nollställen längst linjen $\frac 1 2 + it$ \\
 \\
 {\bf Bevis:} \\
@@ -503,7 +500,7 @@ om man nu deriverar $(1)$ $2n$ antal gånger med avseende på a får man:
 \]
 (deriveringen sker ett jämnt antal gånger för att få en ``regelbunden'' derivata)
 $a$ får nu gå mot $\frac 1 4 \pi^+$.
-Sats 13 innebär nu att den sista tremen i det högra ledet $\to 0$, vilket ger:
+Hjälpsats 13 innebär nu att den sista termen i det högra ledet $\to 0$, vilket ger:
 \[
 	\lim_{a \to \frac 1 4 \pi^+} \int_0^\infty (t^2 + \frac 1 4)^{-1} \cdot t^{2n}\Xi(t) \cdot \cosh(at) \; dt = 
 		\frac {\pi (-1)^n} {2^{2n}} \cos(\frac 8 \pi). \qquad (2)
@@ -511,7 +508,7 @@ Sats 13 innebär nu att den sista tremen i det högra ledet $\to 0$, vilket ger:
 %Detta innebär att det vänstra ledet växlar tecken oändligt många gånger. Då vänstra ledet är kontinuerligt
 %längs linjen $\frac 1 2 + it$ innebär detta att det även blir lika med $0$ oändligt många gånger.
 %Och då ingen av de andra faktorerna blir $0$ oändligt många gånger betyder detta att $\Xi(t)$ har oändligt många nollställen.\\
-Om satsen är fel skulle det innebäre att $\Xi(t)$ har ändligt många nollställen vilket innebär att $\Xi(t)$ aldrig ändrar
+Om satsen är fel skulle det innebära att $\Xi(t)$ har ändligt många nollställen vilket innebär att $\Xi(t)$ aldrig ändrar
 tecken för $t > T$ för något stort $T$. Antag nu att $\Xi(t) > 0$ ($\Xi(t) < 0$ hanteras på samma sätt). låt $L$ Definieras som:
 \newcommand{\skit} {
 	\Xi(t)
@@ -533,8 +530,8 @@ Då $\cosh$ ökar monotont i $[0, \infty]$ antyder det för $T' > T$ att:
 \newcommand{\myeq}[1]{
 	(t^2 + \frac 1 4)^{-1}t^{2n}\skit\cos(#1)
 }
-absolut konvergent. Då $\myeq{\frac \pi 4 t}$ är större än $\myeq{at}$ För alla $a \in [0, \frac \pi 4]$ (Då $\cosh$ växer monotont), låter
-Dominerande konvergenssatsen oss att byta plats på gränsvärdet och integralen $(2)$ ger nu att vi för varje $n$ har:
+är absolut konvergent. Då $\myeq{\frac \pi 4 t}$ är större än $\myeq{at}$ För alla $a \in [0, \frac \pi 4]$ (Då $\cosh$ växer monotont), låter
+Dominerande konvergenssatsen oss att byta plats på gränsvärdet och integralen. $(2)$ ger nu att vi för varje $n$ har:
 \[
 	\int_0^\infty \thisint(\frac \pi 4 t) \ud t = \frac {\pi (-1)^n} {2^{2n}} \cdot \cos(\frac \pi 8)
 \]
@@ -551,9 +548,12 @@ högerledet är då strikt mindre än $0$ och vi har då:
 \]
 Då $T$ är fixt är:
 \[
-	\lvert \thislaser{0}{T} \leq T^{2n} \thislaser 0 T
+	\left |
+		\thislaser{0}{T}
+	\right |
+	\leq T^{2n} \int_0^T (t^2 + \frac 1 4)^{-1} |\skit|\cosh(\frac 1 4 \pi t) \; dt %\thislaser 0 T
 \]
-sätt
+sätt $R = \int_0^T (t^2 + \frac 1 4)^{-1} |\skit|\cosh(\frac 1 4 \pi t) \; dt$. Detta ger nu:
 \[
 	-\thislaser 0 T \leq RT^{2n}
 \]
