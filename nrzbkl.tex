@@ -66,9 +66,10 @@ Om man gör så med alla primtal får man:
 		&\frac {\zeta(s)} {\displaystyle\prod_p \frac 1 {(1 - p^{-s})}} = 1 = \zeta(s) \cdot \prod_p (1 - p^{-s}) \\
 	\end{aligned}
 \end{equation}
-Då $s = a+ bi$ ger att $1-p^{-s} = 1 - e^{-\ln(p) \cdot a} \cdot e^{-ln(p) \cdot bi}$, vilket för $a > 1$ har
-absolutbelopp $\leq 1$ följer det att produkten inte har några singulariteter. 
-Vilket visar att $\zeta(s) \ne 0 \text{ För } \mRe{s} > 1$\\
+Då produkten till höger inte har några singulariteter visar detta att $\zeta(s) \ne 0$ för $\mRe{s} > 1$
+%Då $s = a+ bi$ ger att $1-p^{-s} = 1 - e^{-\ln(p) \cdot a} \cdot e^{-ln(p) \cdot bi}$, vilket för $a > 1$ har
+%absolutbelopp $\leq 1$ följer det att produkten inte har några singulariteter. 
+%Vilket visar att $\zeta(s) \ne 0 \text{ För } \mRe{s} > 1$\\
 
 \paragraph{Definition:}
 Den kompletta zeta-funktionen.\\
@@ -367,16 +368,25 @@ så gäller:
 \newcommand{\mQ} {
 	\frac 1 2 \twelve{\infty}
 }
+%\[
+%	Q(x) = \mQ \quad (1)
+%\]
 \[
-	Q(x) = \mQ \quad (1)
+	Q(x) = \frac 1 2 \int_{-\infty}^\infty (t^2 + \frac 1 4)^{-1} \cdot \cos(xt) \; dt \quad (1)
 \]
 Då $\sin(xt)$ är ``inverst symmetrisk'' kring $t = 0$ följer det att 
+%\[
+%	\mQ = 0 \quad (2)
+%\]
 \[
-	\mQ = 0 \quad (2)
+	\frac 1 2 \int_{-\infty}^\infty (t^2 + \frac 1 4)^{-1} \cdot \cos(xt) \; dt = 0 \quad (2)
 \]
 Addition av $(1)$ och $(2)$ tillsammans med Eulers formel ger nu: 
+%\[
+%	Q(x) = \frac 1 2 \cdot \helper{-\infty} \Xi(t)\cdot e^{ixt} \; dt
+%\]
 \[
-	Q(x) = \frac 1 2 \cdot \helper{-\infty} \Xi(t)\cdot e^{ixt} \; dt
+	Q(x) = \frac 1 2 \cdot \int_{-\infty}^{\infty} (t^2 + \frac 1 4)^{-1} \Xi(t) \cdot e^{ixt} \- dt
 \]
 låt $s = \frac 1 2 + it$. Då följer:
 \[
@@ -387,13 +397,13 @@ låt $s = \frac 1 2 + it$. Då följer:
 	} \cdot \smartint{\tfrac 1 2}{\infty}
 		\frac {1} {s(1-s)} \Xi(s) \cdot e^{xs} \; ds
 \]
-Definitionen av $\zeta(s)$ ger nu:
+Definitionen av $\Xi(s)$ på den kritiska linjen ger nu:
 \[
 	Q(x) = - \frac {
 		e^{- \frac 1 2 xt}
 	} {
 		4i
-	} \cdot \smartint{\tfrac 1 2}{\infty} \zeta(s) \cdot \Gamma
+	} \cdot \smartint{\tfrac 1 2}{\infty} \zeta(s) \cdot \Gamma(\frac s 2)
 		\pi^{- \frac s 2} \cdot e^{xs} \; ds
 \]
 $z(s) \cdot \Gamma(\frac s 2) \pi^{- \frac s 0} \cdot e^{xs}$ har singulariteter i $s = 0$ och $s = 1$.
@@ -401,6 +411,7 @@ Därmed följer det att om vi flyttar linjeintegralen till höger om linjen $c=1
 subtrahera residualen i $s = 1$ så för $c > 1$ gäller:
 \[
 	Q(x) = - \frac {e^{- \frac 1 2 xt}} {4i} \cdot \int_{\tfrac 1 2 - \infty}^{\tfrac 1 2 + \infty} \zeta(s) \cdot \Gamma
+		(\frac s 2)
 		\pi^{- \frac s 2} \cdot e^{xs} \; ds + \frac {e^{- \frac 1 2 xt}} {4i} \cdot2 \pi i \cdot \operatorname{Res}(\zeta(s) \cdot
 		\Gamma(\frac s 2) \cdot \pi^{-\frac s 2} \cdot e^{xs}, 1)
 \]
@@ -453,7 +464,7 @@ Det sista steget gäller då udda $n$ ger udda $n^2$ och jämna $n$ ger jämna $
 			\omega(v) \qquad (1)
 \]
 \[
-	\omega(x) x^{- \frac 1 2} \cdot \omega(\frac 1 x) + \frac 1 2  x^{- \frac 1 2} - \frac 1 2 \text{ (Se Sats 3 för härledning)}
+	\omega(x) =  x^{- \frac 1 2} \cdot \omega(\frac 1 x) + \frac 1 2  x^{- \frac 1 2} - \frac 1 2 \text{ (Se Sats 3 för härledning)}
 \]
 Vilket ger att $(1)$ blir:
 \[
